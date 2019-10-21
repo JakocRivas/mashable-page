@@ -1,30 +1,44 @@
+/*set the nav bar to have the view port width*/
 nav {
   background-color: gray;
   width: 100vw;
 }
+
+/* change the default styling of the ul elements to none */
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
+
+/* adds padding to the li elements */
 li {
   padding: 8px 16px;
 }
+
+/* change the color of the li elements when the mouse is on hover */
 li:hover {
   background-color: #555;
   color: white;
 }
+
+/* puts the li elements on the menu class side by side */
 .navigation .menu li {
   float: left;
   margin-right: 20px;
 }
+
+/* puts the search facebook twitter and sign in buttons to the left of the page */
 .social {
   margin-left: 70%;
 }
+/* puts the li elements on the social class side by side */
 .navigation .social li {
   float: left;
   margin-right: 20px;
 }
+
+/* displays menu in-line */
 .menu {
   display: inline;
 }
