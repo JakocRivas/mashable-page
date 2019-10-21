@@ -1,7 +1,7 @@
 /*set the nav bar to have the view port width*/
 nav {
   display: block;
-  background-color: gray;
+  background-color: #00aeef;
   width: 100vw;
   position: fixed; /* Make it stick, even on scroll */
   margin: 0 auto;
@@ -21,9 +21,16 @@ ul {
 
 /* adds padding to the li elements */
 li {
+  color: white;
   padding: 8px 16px;
   text-align: center;
+}
+
+li a {
   font: 12px "ProximaNovaRegular", Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 200;
 }
 
 /* change the color of the li elements when the mouse is on hover */
