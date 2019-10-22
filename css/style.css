@@ -9,6 +9,7 @@ nav {
   right: 0;
   top: 0;
   z-index: 10;
+  box-sizing: border-box;
 }
 
 /* change the default styling of the ul elements to none */
@@ -22,15 +23,18 @@ ul {
 /* adds padding to the li elements */
 li {
   color: white;
-  padding: 8px 16px;
+  padding: 8px 10px;
   text-align: center;
+}
+#mashable {
+  font-weight: bolder;
 }
 
 li a {
-  font: 12px "ProximaNovaRegular", Arial, sans-serif;
+  font-family: "ProximaNovaRegular", Arial, sans-serif;
   text-transform: uppercase;
-  font-size: 1.2rem;
-  font-weight: 200;
+  font-size: 10px;
+  font-weight: bold;
 }
 
 /* change the color of the li elements when the mouse is on hover */
@@ -39,23 +43,23 @@ li:hover {
   color: white;
 }
 
-/* puts the li elements on the menu class side by side */
-.navigation .menu li {
-  float: left;
-  margin-right: 20px;
-}
-
 /* puts the search facebook twitter and sign in buttons to the left of the page */
 .social {
   margin-left: 70%;
 }
-/* puts the li elements on the social class side by side */
-.navigation .social li {
-  float: left;
-  margin-right: 20px;
-}
 
 /* displays menu in-line */
-/* .menu {
-  display: inline;
-} */
+.menu {
+  margin-right: 30%;
+}
+
+/* puts the li elements on the social class side by side */
+.social li {
+  float: right;
+  /* margin-right: 20px; */
+}
+/* puts the li elements on the menu class side by side */
+.menu li {
+  float: left;
+  /* margin-right: 20px; */
+}
