@@ -1,36 +1,44 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
 /*set the nav bar to have the view port width*/
-nav {
-  display: block;
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-color: #00aeef;
   width: 100vw;
   position: fixed; /* Make it stick, even on scroll */
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 10;
-  box-sizing: border-box;
+  /* margin: 0 auto; */
+  /* left: 0; */
+  /* right: 0; */
+  /* top: 0; */
+  /* z-index: 10; */
+  /* box-sizing: border-box; */
 }
 
 /* change the default styling of the ul elements to none */
 ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  /* margin: 0; */
+  /* padding: 0; */
   /* background-color: gray; */
 }
 
 /* adds padding to the li elements */
-li {
+.navigation li {
   color: white;
   padding: 8px 10px;
   text-align: center;
+  display: inline;
 }
 #mashable {
   font-weight: bolder;
 }
 
-li a {
+.navigation li a {
   font-family: "ProximaNovaRegular", Arial, sans-serif;
   text-transform: uppercase;
   font-size: 10px;
@@ -38,28 +46,65 @@ li a {
 }
 
 /* change the color of the li elements when the mouse is on hover */
-li:hover {
+.navigation li:hover {
   background-color: #555;
   color: white;
 }
 
 /* puts the search facebook twitter and sign in buttons to the left of the page */
-.social {
+/* .social {
   margin-left: 70%;
-}
+} */
 
 /* displays menu in-line */
-.menu {
+/* .menu {
   margin-right: 30%;
-}
+} */
 
 /* puts the li elements on the social class side by side */
-.social li {
-  float: right;
+.social {
+  /* float: right; */
   /* margin-right: 20px; */
+  /* align-self: flex-end; */
+  justify-content: flex-end;
 }
 /* puts the li elements on the menu class side by side */
-.menu li {
-  float: left;
+.menu {
+  /* float: left; */
   /* margin-right: 20px; */
+  justify-content: flex-start;
+}
+
+.menu-links {
+  display: flex;
+  justify-content: space-around;
+  /* width: -70%; */
+}
+
+.menu-links a {
+  background-color: red;
+}
+.social-links a {
+  background-color: slateblue;
+}
+.social-links {
+  display: flex;
+  justify-content: space-around;
+  /* width: -30%; */
+}
+
+.hamburger {
+  display: none;
+}
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+  background-color: whitesmoke;
+}
+
+@media screen and (max-width: 860px) {
+  body {
+    display: none;
+  }
 }
