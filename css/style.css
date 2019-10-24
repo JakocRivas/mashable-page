@@ -138,8 +138,9 @@ ul {
   }
   .hamburger {
     display: block;
-    /* justify-content: flex-end; */
     cursor: pointer;
+    position: relative;
+    right: calc(60%);
   }
   .menu-links li {
     /* background-color: rgb(230, 17, 17); */
