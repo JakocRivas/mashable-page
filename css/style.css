@@ -124,8 +124,8 @@ ul {
   .menu-links {
     position: absolute;
     left: 0;
-    height: 92vh;
-    top: 8vh;
+    height: 98.5vh;
+    top: 3.45vh;
     background-color: #555;
     display: flex;
     flex-direction: column;
