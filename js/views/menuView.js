@@ -1,12 +1,12 @@
-const { elements } = require("./base");
+import { elements } from "./base";
 
-const createMenu = menu => ` 
+export const createMenu = menu => ` 
         <li>
             <a>${menu.name}</a>
         </li>
 `;
 
-const renderMenus = menu => {
+export const renderMenus = menu => {
   const markup = createMenu(menu);
   elements.menuContainer.insertAdjacentHTML("beforeend", markup);
 };

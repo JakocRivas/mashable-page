@@ -1,4 +1,3 @@
-const elements = {
-    menuContainer = '.menu-links'
-}
-module.exports={elements}
+export const elements = {
+  menuContainer: document.querySelector(".menu-links")
+};

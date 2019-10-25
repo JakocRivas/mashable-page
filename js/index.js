@@ -1,14 +1,20 @@
-const { Menu } = require("./models/menu");
-const menuView = require("./views/menuView");
-
-const { elements } = require("./views/base");
+import Menu from "./models/menu";
+import * as menuView from "./views/menuView";
+console.log(menuView);
+import { elements } from "./views/base";
 
 let state = {};
 
 const controlMenu = () => {
   if (!state.menu) state.menu = new Menu();
-  const link = state.menu.addMenu("new Menu");
-  menuView.renderMenus(link);
+  state.menu.addMenu("new Menu");
+  state.menu.addMenu("new Menu 2");
+  console.log(state.menu.menus);
+
+  state.menu.menus.forEach(menu => {
+    console.log(menu.name);
+    menuView.renderMenus(menu.name);
+  });
 };
 controlMenu();
 
