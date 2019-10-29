@@ -3,10 +3,10 @@ export default class Menu {
     this.menus = [];
   }
 
-  addMenu(name) {
+  addMenu({ name, subMenu }) {
     const menu = {
       name,
-      subMenu: {}
+      subMenu
     };
 
     if (this.menus.length < 8 && name.length > 0) {

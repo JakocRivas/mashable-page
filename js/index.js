@@ -6,15 +6,40 @@ let state = {};
 
 const controlMenu = () => {
   if (!state.menu) state.menu = new Menu();
+  
   const elems = [
-    "VIDEO",
-    "ENTERTAINMENT",
-    "CULTURE",
-    "TECH",
-    "SCIENCE",
-    "SOCIAL GOOD",
-    "SHOP",
-    "MORE"
+    {
+      name: 'VIDEO',
+      subMenu: []
+    },
+    {
+      name: 'ENTERTAINMENT',
+      subMenu: ['TOTO1', 'TOTO2', 'Y TOTO 3'],
+    },
+    {
+      name: 'CULTURE',
+      subMenu: [],
+    },
+    {
+      name: 'TECH',
+      subMenu: []
+    },
+    {
+      name: 'SCIENCE',
+      subMenu: [],
+    },
+    {
+      name: 'SOCIAL GOOD',
+      subMenu: [],
+    },
+    {
+      name: 'SHOP',
+      subMenu: [],
+    },
+    {
+      name: 'MORE',
+      subMenu: [],
+    },
   ];
 
   for (let elem of elems) 
