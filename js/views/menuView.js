@@ -1,12 +1,13 @@
 import { elements } from "./base";
 
-export const createMenu = menu => ` 
+export const createMenu = ({ name }) => ` 
         <li>
-            <a>${menu.name}</a>
+            <a>${name}</a>
         </li>
 `;
 
 export const renderMenus = menu => {
+  console.log(menu)
   const markup = createMenu(menu);
   elements.menuContainer.insertAdjacentHTML("beforeend", markup);
 };

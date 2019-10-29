@@ -1,19 +1,27 @@
 import Menu from "./models/menu";
 import * as menuView from "./views/menuView";
-console.log(menuView);
 import { elements } from "./views/base";
 
 let state = {};
 
 const controlMenu = () => {
   if (!state.menu) state.menu = new Menu();
-  state.menu.addMenu("new Menu");
-  state.menu.addMenu("new Menu 2");
-  console.log(state.menu.menus);
+  const elems = [
+    "VIDEO",
+    "ENTERTAINMENT",
+    "CULTURE",
+    "TECH",
+    "SCIENCE",
+    "SOCIAL GOOD",
+    "SHOP",
+    "MORE"
+  ];
+
+  for (let elem of elems) 
+    state.menu.addMenu(elem);
 
   state.menu.menus.forEach(menu => {
-    console.log(menu.name);
-    menuView.renderMenus(menu.name);
+    menuView.renderMenus(menu);
   });
 };
 controlMenu();
