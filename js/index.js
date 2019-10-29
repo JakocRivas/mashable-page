@@ -14,7 +14,7 @@ const controlMenu = () => {
     },
     {
       name: 'ENTERTAINMENT',
-      subMenu: ['TOTO1', 'TOTO2', 'Y TOTO 3'],
+      subMenu: ['menusito 1','menusito 2', 'menusito 3'],
     },
     {
       name: 'CULTURE',
