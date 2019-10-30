@@ -1,9 +1,10 @@
 export default class Menu {
   constructor() {
     this.menus = [];
+    this.more = [];
   }
 
-  addMenu({ name, subMenu=[],type}) {
+  addMenu({ name, subMenu = [], type }) {
     const menu = {
       name,
       subMenu

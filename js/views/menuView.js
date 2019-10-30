@@ -24,7 +24,7 @@ export const createMenu = ({ name, subMenu, type }) => {
   `;
 };
 
-export const createSocial = name => {
+export const createSocial = ({ name }) => {
   let markUp = `
   <li>
     <a>${name}</a>
@@ -39,4 +39,7 @@ export const renderMenus = menu => {
   elements.menuContainer.insertAdjacentHTML("beforeend", markup);
 };
 
-export const renderSocial = menu => {};
+export const renderSocial = menu => {
+  const markup = createSocial(menu);
+  elements.socialContainer.insertAdjacentHTML("beforeend", markup);
+};

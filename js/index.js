@@ -55,8 +55,25 @@ const controlMenu = () => {
 
   for (let elem of elems) state.menu.addMenu(elem);
 
+  const icons = [
+    {
+      name: "search"
+    },
+    { name: "facebook" },
+    { name: "twitter" },
+    { name: "profile" }
+  ];
+  for (let elem of icons) {
+    console.log(elem);
+    state.menu.addMenu(elem);
+  }
+  console.log(state.menu);
+
   state.menu.menus.forEach(menu => {
     menuView.renderMenus(menu);
+  });
+  state.menu.more.forEach(menu => {
+    menuView.renderSocial(menu);
   });
 };
 controlMenu();
