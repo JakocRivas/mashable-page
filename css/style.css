@@ -29,7 +29,7 @@ ul {
 }
 
 /* adds padding to the li elements */
-.menu li,
+.title-menu,
 .social li {
   color: white;
   padding: 8px 10px;
@@ -41,6 +41,9 @@ ul {
 #icon {
   font-weight: bolder;
   color: white;
+  margin: auto;
+  padding: 8px 10px;
+  /* height: 43px; */
 }
 #icon a img {
   width: 131px;
@@ -49,9 +52,11 @@ ul {
   /* background-color: transparent; */
 }
 .dark {
+  width: 100%;
   display: none;
 }
 .light {
+  width: 100%;
   display: block;
 }
 #icon:hover > a .light {
@@ -220,13 +225,21 @@ ul {
 .submenu li {
   display: block;
   text-align: right;
-  padding-right: 20px;
+  margin-right: 20px;
   text-decoration: none;
   color: #0698dd;
   font-size: 1.1rem;
   font-weight: 900;
 }
-.submenu li:hover {
+/* .submenu li:hover {
+  background-color: #ddf0f9;
+  color: #0698dd;
+} */
+.article {
+  height: 15px;
+}
+
+.article:hover {
   background-color: #ddf0f9;
   color: #0698dd;
 }
