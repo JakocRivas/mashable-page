@@ -30,7 +30,7 @@ ul {
 
 /* adds padding to the li elements */
 .title-menu,
-.social li {
+.title-social {
   color: white;
   padding: 8px 10px;
   text-align: center;
@@ -39,7 +39,9 @@ ul {
   margin-right: 20px;
 }
 .title-menu li:hover,
-.title-menu a:hover {
+.title-menu a:hover,
+.title-social li:hover,
+.title-social a:hover {
   cursor: pointer;
 }
 #icon {
@@ -80,7 +82,8 @@ ul {
 }
 
 /* change the color of the li elements when the mouse is on hover */
-.menu li:hover {
+.menu li:hover,
+.title-social:hover {
   background-color: #ddf0f9;
   color: #00aeef;
 }
@@ -116,10 +119,10 @@ ul {
   /* width: -70%; */
 }
 
-.menu-links li,
-.social-links li {
-  /* background-color: red; */
-}
+/* .menu-links li, */
+/* .social-links li { */
+/* background-color: red; */
+/* } */
 
 .social-links {
   display: flex;
@@ -249,10 +252,10 @@ ul {
   /* padding: 20px; */
   padding-top: 5px;
 }
-.article:not(:first-child) {
-  /* margin: 10px 0; */
-  /* margin-bottom: 6px; */
-}
+/* .article:not(:first-child) { */
+/* margin: 10px 0; */
+/* margin-bottom: 6px; */
+/* } */
 
 .article:hover {
   background-color: #ddf0f9;

@@ -25,8 +25,8 @@ export const createMenu = ({ name, subMenu, type }) => {
 };
 
 export const createSocial = ({ name }) => {
-  let markUp = `
-  <li>
+  return `
+  <li class="title-social">
     <a>${name}</a>
   </li>
 `;
