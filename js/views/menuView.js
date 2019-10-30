@@ -1,25 +1,30 @@
 import { elements } from "./base";
 
-export const createMenu = ({ name, subMenu }) => {
-  let menu = '';
+export const createMenu = ({ name, subMenu, type }) => {
+  let menu = "";
+  let className = type === "menu-more" ? "more" : "submenu";
 
-  for (let elem of subMenu) 
-    menu += `<li><a>${elem}</a></li>`;
+  for (let elem of subMenu) menu += `<li><a>${elem}</a></li>`;
 
-  return ` 
+  return `
     <li>
       <a>${name}</a>
-        <div>
-          <ul>
-             ${menu}
-          </ul>
-        </div>
+        ${
+          subMenu.length > 0
+            ? `
+          <div class='submenu-container'>
+            <ul class='${className}'>
+              ${menu}
+            </ul>
+          </div>
+        `
+            : ""
+        }
     </li>
   `;
-}
+};
 
 export const renderMenus = menu => {
-  console.log(menu)
   const markup = createMenu(menu);
   elements.menuContainer.insertAdjacentHTML("beforeend", markup);
 };

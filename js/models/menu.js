@@ -3,7 +3,7 @@ export default class Menu {
     this.menus = [];
   }
 
-  addMenu({ name, subMenu }) {
+  addMenu({ name, subMenu=[],type}) {
     const menu = {
       name,
       subMenu

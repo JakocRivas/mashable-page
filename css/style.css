@@ -3,6 +3,7 @@
   padding: 0px;
   box-sizing: border-box;
 }
+
 /*set the nav bar to have the view port width*/
 .navigation {
   display: flex;
@@ -28,7 +29,8 @@ ul {
 }
 
 /* adds padding to the li elements */
-.navigation li {
+.menu li,
+.social li {
   color: white;
   padding: 8px 10px;
   text-align: center;
@@ -38,7 +40,7 @@ ul {
   font-weight: bolder;
 }
 
-.navigation li a {
+.navigation a {
   font-family: "ProximaNovaRegular", Arial, sans-serif;
   text-transform: uppercase;
   font-size: 10px;
@@ -46,7 +48,7 @@ ul {
 }
 
 /* change the color of the li elements when the mouse is on hover */
-.navigation li:hover {
+.menu li:hover {
   background-color: #555;
   color: white;
 }
@@ -82,14 +84,12 @@ ul {
   /* width: -70%; */
 }
 
-.menu-links li {
+.menu-links li,
+.social-links li  {
   /* background-color: red; */
   cursor: pointer;
 }
-.social-links li {
-  /* background-color: slateblue; */
-  cursor: pointer;
-}
+
 .social-links {
   display: flex;
   justify-content: space-around;
@@ -100,6 +100,7 @@ ul {
 .hamburger {
   display: none;
 }
+
 .hamburger div {
   width: 25px;
   height: 3px;
@@ -173,4 +174,38 @@ ul {
 }
 .toggle .line3 {
   transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.submenu-container {
+  /* display:block; */
+
+  position: absolute;
+  background: red;
+  width: 100%;
+  left: 0;
+  margin-top: 5px;
+  display: none;
+  height: 180px;
+  border-bottom: 5px solid #00aeef;
+}
+
+.submenu {
+  /* position: relative ; */
+  background: blue;
+  width: 200px;
+  height: 100%;
+}
+
+.submenu li {
+  display: block;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.submenu a {
+
+}
+
+.menu li:hover  > .submenu-container {
+  display: block;
 }

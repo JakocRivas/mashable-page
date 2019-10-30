@@ -9,36 +9,42 @@ const controlMenu = () => {
   
   const elems = [
     {
-      name: 'VIDEO',
-      subMenu: []
+      name: 'VIDEO'
     },
     {
       name: 'ENTERTAINMENT',
       subMenu: ['menusito 1','menusito 2', 'menusito 3'],
+      type:'submenu'
     },
     {
       name: 'CULTURE',
-      subMenu: [],
+      subMenu: ['bimbo'],
+      type:'submenu'
     },
     {
       name: 'TECH',
-      subMenu: []
+      subMenu: ['simbo'],
+      type:'submenu'
     },
     {
       name: 'SCIENCE',
-      subMenu: [],
+      subMenu: ['jimbo'],
+      type:'submenu'
     },
     {
       name: 'SOCIAL GOOD',
-      subMenu: [],
+      subMenu: ['dumbo'],
+      type:'submenu'
     },
     {
       name: 'SHOP',
-      subMenu: [],
+      subMenu: ['sumbo'],
+      type:'menu-more'
     },
     {
       name: 'MORE',
-      subMenu: [],
+      subMenu: ['jumbo'],
+      type:'menu-more'
     },
   ];
 
