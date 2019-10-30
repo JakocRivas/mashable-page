@@ -8,7 +8,7 @@ export const createMenu = ({ name, subMenu, type }) => {
 
   return `
     <li class="title-menu">
-      <a>${name}</a>
+      <a class="title-name">${name}</a>
         ${
           subMenu.length > 0
             ? `
@@ -27,7 +27,7 @@ export const createMenu = ({ name, subMenu, type }) => {
 export const createSocial = ({ name }) => {
   return `
   <li class="title-social">
-    <a>${name}</a>
+    <a class="title-name">${name}</a>
   </li>
 `;
 
