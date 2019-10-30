@@ -4,7 +4,8 @@ export const createMenu = ({ name, subMenu, type }) => {
   let menu = "";
   let className = type === "menu-more" ? "more" : "submenu";
 
-  for (let elem of subMenu) menu += `<li class="article"><a>${elem}</a></li>`;
+  for (let elem of subMenu)
+    menu += `<li class="article"><a class="article-font">${elem}</a></li>`;
 
   return `
     <li class="title-menu">
