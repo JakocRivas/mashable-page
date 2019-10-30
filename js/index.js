@@ -6,50 +6,54 @@ let state = {};
 
 const controlMenu = () => {
   if (!state.menu) state.menu = new Menu();
-  
+
   const elems = [
     {
-      name: 'VIDEO'
+      name: "VIDEO"
     },
     {
-      name: 'ENTERTAINMENT',
-      subMenu: ['menusito 1','menusito 2', 'menusito 3'],
-      type:'submenu'
+      name: "ENTERTAINMENT",
+      subMenu: [
+        "menusito 1",
+        "menusito 2",
+        "menusito 3",
+        "menusito super especial"
+      ],
+      type: "submenu"
     },
     {
-      name: 'CULTURE',
-      subMenu: ['bimbo'],
-      type:'submenu'
+      name: "CULTURE",
+      subMenu: ["bimbo"],
+      type: "submenu"
     },
     {
-      name: 'TECH',
-      subMenu: ['simbo'],
-      type:'submenu'
+      name: "TECH",
+      subMenu: ["simbo"],
+      type: "submenu"
     },
     {
-      name: 'SCIENCE',
-      subMenu: ['jimbo'],
-      type:'submenu'
+      name: "SCIENCE",
+      subMenu: ["jimbo"],
+      type: "submenu"
     },
     {
-      name: 'SOCIAL GOOD',
-      subMenu: ['dumbo'],
-      type:'submenu'
+      name: "SOCIAL GOOD",
+      subMenu: ["dumbo"],
+      type: "submenu"
     },
     {
-      name: 'SHOP',
-      subMenu: ['sumbo'],
-      type:'menu-more'
+      name: "SHOP",
+      subMenu: ["sumbo"],
+      type: "menu-more"
     },
     {
-      name: 'MORE',
-      subMenu: ['jumbo'],
-      type:'menu-more'
-    },
+      name: "MORE",
+      subMenu: ["jumbo"],
+      type: "menu-more"
+    }
   ];
 
-  for (let elem of elems) 
-    state.menu.addMenu(elem);
+  for (let elem of elems) state.menu.addMenu(elem);
 
   state.menu.menus.forEach(menu => {
     menuView.renderMenus(menu);

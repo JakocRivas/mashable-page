@@ -38,11 +38,16 @@ ul {
   font-weight: bold;
   margin-right: 20px;
 }
+.title-menu li:hover,
+.title-menu a:hover {
+  cursor: pointer;
+}
 #icon {
   font-weight: bolder;
   color: white;
   margin: auto;
   padding: 8px 10px;
+  margin-right: 20px;
   /* height: 43px; */
 }
 #icon a img {
@@ -113,7 +118,6 @@ ul {
 .menu-links li,
 .social-links li {
   /* background-color: red; */
-  cursor: pointer;
 }
 
 .social-links {
@@ -216,10 +220,11 @@ ul {
 }
 
 .submenu {
-  /* position: relative ; */
+  position: relative;
   background: #c7e6f5;
   width: 200px;
   height: 100%;
+  padding-top: 20px;
 }
 
 .submenu li {
@@ -236,7 +241,16 @@ ul {
   color: #0698dd;
 } */
 .article {
-  height: 15px;
+  /* height: 15px; */
+  position: relative;
+  width: 100%;
+  padding-right: 25px;
+  /* padding: 20px; */
+  padding-top: 5px;
+}
+.article:not(:first-child) {
+  /* margin: 10px 0; */
+  /* margin-bottom: 6px; */
 }
 
 .article:hover {
