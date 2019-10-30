@@ -35,22 +35,43 @@ ul {
   padding: 8px 10px;
   text-align: center;
   display: inline;
+  font-weight: bold;
+  margin-right: 20px;
 }
-#mashable {
+#icon {
   font-weight: bolder;
+  color: white;
+}
+#icon a img {
+  width: 131px;
+}
+#icon:hover {
+  /* background-color: transparent; */
+}
+.dark {
+  display: none;
+}
+.light {
+  display: block;
+}
+#icon:hover > a .light {
+  display: none;
+}
+#icon:hover > a .dark {
+  display: block;
 }
 
 .navigation a {
-  font-family: "ProximaNovaRegular", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   font-size: 10px;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 /* change the color of the li elements when the mouse is on hover */
 .menu li:hover {
-  background-color: #555;
-  color: white;
+  background-color: #ddf0f9;
+  color: #00aeef;
 }
 
 /* puts the search facebook twitter and sign in buttons to the left of the page */
@@ -85,7 +106,7 @@ ul {
 }
 
 .menu-links li,
-.social-links li  {
+.social-links li {
   /* background-color: red; */
   cursor: pointer;
 }
@@ -180,7 +201,7 @@ ul {
   /* display:block; */
 
   position: absolute;
-  background: red;
+  background: #ddf0f9;
   width: 100%;
   left: 0;
   margin-top: 5px;
@@ -191,7 +212,7 @@ ul {
 
 .submenu {
   /* position: relative ; */
-  background: blue;
+  background: #c7e6f5;
   width: 200px;
   height: 100%;
 }
@@ -200,12 +221,19 @@ ul {
   display: block;
   text-align: right;
   padding-right: 20px;
+  text-decoration: none;
+  color: #0698dd;
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+.submenu li:hover {
+  background-color: #ddf0f9;
+  color: #0698dd;
 }
 
 .submenu a {
-
 }
 
-.menu li:hover  > .submenu-container {
+.menu li:hover > .submenu-container {
   display: block;
 }
