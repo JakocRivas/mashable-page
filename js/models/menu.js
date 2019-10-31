@@ -7,7 +7,8 @@ export default class Menu {
   addMenu({ name, subMenu = [], type }) {
     const menu = {
       name,
-      subMenu
+      subMenu,
+      type
     };
 
     if (this.menus.length < 8 && name.length > 0) {

@@ -13,47 +13,66 @@ const controlMenu = () => {
     },
     {
       name: "ENTERTAINMENT",
-      subMenu: [
-        "menusito 1",
-        "menusito 2",
-        "menusito 3",
-        "menusito super especial"
-      ],
-      type: "submenu"
-    },
-    {
-      name: "CULTURE",
-      subMenu: ["bimbo"],
-      type: "submenu"
-    },
-    {
-      name: "TECH",
-      subMenu: ["simbo"],
-      type: "submenu"
-    },
-    {
-      name: "SCIENCE",
-      subMenu: ["jimbo"],
-      type: "submenu"
-    },
-    {
-      name: "SOCIAL GOOD",
-      subMenu: ["dumbo"],
-      type: "submenu"
-    },
-    {
-      name: "SHOP",
-      subMenu: ["sumbo"],
-      type: "menu-more"
-    },
-    {
-      name: "MORE",
-      subMenu: ["jumbo"],
-      type: "menu-more"
+      subMenu: {
+        article1: {
+          name: "menusito 1",
+          subArticles: ["article 1", "article 2", "super articulo numero tres"]
+        },
+
+        article2: {
+          name: "menusito 2",
+          subArticles: ["article 1", "article 2", "super articulo numero tres"]
+        },
+
+        article3: {
+          name: "menusito 3",
+          subArticles: ["article 1", "article 2", "super articulo numero tres"]
+        }
+      },
+      type: "subMenu"
     }
+    // {
+    //   name: "CULTURE",
+    //   subMenu: ["bimbo"],
+    //   type: "submenu"
+    // },
+    // {
+    //   name: "TECH",
+    //   subMenu: ["simbo"],
+    //   type: "submenu"
+    // },
+    // {
+    //   name: "SCIENCE",
+    //   subMenu: ["jimbo"],
+    //   type: "submenu"
+    // },
+    // {
+    //   name: "SOCIAL GOOD",
+    //   subMenu: ["dumbo"],
+    //   type: "submenu"
+    // },
+    // {
+    //   name: "SHOP",
+    //   subMenu: ["sumbo"],
+    //   type: "menu-more"
+    // },
+    // {
+    //   name: "MORE",
+    //   subMenu: ["jumbo"],
+    //   type: "menu-more"
+    // }
   ];
 
+  // for (let elem of elems) {
+  //   console.log(elem);
+  // }
+  // elems.forEach((element, index, array) => {
+  //   console.log(element.name); // 100, 200, 300
+  //   console.log(element.subMenu); // 0, 1, 2
+  //   console.log(element.type); // same myArray object 3 times
+  // });
   for (let elem of elems) state.menu.addMenu(elem);
+  // console.log(elems);
 
   const icons = [
     {
@@ -64,12 +83,12 @@ const controlMenu = () => {
     { name: "profile" }
   ];
   for (let elem of icons) {
-    console.log(elem);
     state.menu.addMenu(elem);
   }
-  console.log(state.menu);
+  // console.log(state.menu);
 
   state.menu.menus.forEach(menu => {
+    console.log(menu.subMenu);
     menuView.renderMenus(menu);
   });
   state.menu.more.forEach(menu => {
