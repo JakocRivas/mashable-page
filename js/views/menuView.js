@@ -3,26 +3,22 @@ import { elements } from "./base";
 export const createMenu = ({ name, subMenu, type }) => {
   let menu = "";
   let className = type === "menu-more" ? "more" : "submenu";
-  // console.log(subMenu);
+  console.log(subMenu.length);
 
-  for (let article of Array.from(subMenu.title)) {
-    // console.log(article);
-    // console.log(article.subArticles.subMenu);
-    menu += `<li class="article"><a class="article-font">${article.title}</a></li>`;
-  }
+  subMenu.map(elem => {
+    console.log(elem.title);
+    console.log(elem.subArticles);
+    menu += `<li class="article"><a class="article-font">${elem.title}</a></li>`;
+  });
 
   return `
     <li class="title-menu">
       <a class="title-name">${name}</a>
         ${
-          Object.keys(subMenu).length > 0
-            ? `
-          <div class='submenu-container'>
-            <ul class='${className}'>
-              ${menu}
-            </ul>
-          </div>
-        `
+          subMenu.length > 0
+            ? type !== "menu-more"
+              ? `<div class='submenu-container'><ul class='${className}'>${menu}</ul></div>`
+              : `<div class='submenu-container'><ul class='${className}'>${"more menu"}</ul></div>`
             : ""
         }
     </li>

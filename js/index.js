@@ -13,55 +13,57 @@ const controlMenu = () => {
     },
     {
       name: "ENTERTAINMENT",
-      subMenu: {
-        article1: {
+      subMenu: [
+        {
           title: "menusito 1",
           subArticles: ["article 1", "article 2", "super articulo numero tres"]
         },
 
-        article2: {
+        {
           title: "menusito 2",
           subArticles: ["article 1", "article 2", "super articulo numero tres"]
         },
 
-        article3: {
+        {
           title: "menusito 3",
           subArticles: ["article 1", "article 2", "super articulo numero tres"]
         }
-      },
+      ],
       type: "subMenu"
+    },
+
+    {
+      name: "CULTURE",
+      subMenu: [{ title: "bimbo" }, { title: "holiwis" }],
+      type: "submenu"
+    },
+    {
+      name: "TECH",
+      subMenu: [{ title: "simbo" }],
+      type: "submenu"
+    },
+    {
+      name: "SCIENCE",
+      subMenu: [{ title: "jimbo" }],
+      type: "submenu"
+    },
+    {
+      name: "SOCIAL GOOD",
+      subMenu: [{ title: "dumbo" }],
+      type: "submenu"
+    },
+    {
+      name: "SHOP",
+      subMenu: [{ title: "sumbo" }],
+      type: "menu-more"
+    },
+    {
+      name: "MORE",
+      subMenu: [{ title: "jumbo" }],
+      type: "menu-more"
     }
-    // {
-    //   name: "CULTURE",
-    //   subMenu: ["bimbo"],
-    //   type: "submenu"
-    // },
-    // {
-    //   name: "TECH",
-    //   subMenu: ["simbo"],
-    //   type: "submenu"
-    // },
-    // {
-    //   name: "SCIENCE",
-    //   subMenu: ["jimbo"],
-    //   type: "submenu"
-    // },
-    // {
-    //   name: "SOCIAL GOOD",
-    //   subMenu: ["dumbo"],
-    //   type: "submenu"
-    // },
-    // {
-    //   name: "SHOP",
-    //   subMenu: ["sumbo"],
-    //   type: "menu-more"
-    // },
-    // {
-    //   name: "MORE",
-    //   subMenu: ["jumbo"],
-    //   type: "menu-more"
-    // }
   ];
+  // console.log(elems);
 
   // for (let elem of elems) {
   //   console.log(elem);
@@ -87,11 +89,10 @@ const controlMenu = () => {
   }
   // console.log(state.menu);
 
-  state.menu.menus.forEach(menu => {
-    console.log(menu.subMenu);
+  state.menu.menus.map(menu => {
     menuView.renderMenus(menu);
   });
-  state.menu.more.forEach(menu => {
+  state.menu.more.map(menu => {
     menuView.renderSocial(menu);
   });
 };
