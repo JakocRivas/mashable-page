@@ -78,16 +78,16 @@ const controlMenu = () => {
     { name: "twitter" },
     { name: "profile" }
   ];
-  for (let elem of icons) {
-    state.menu.addMenu(elem);
-  }
+  // for (let elem of icons) {
+  //   state.menu.addMenu(elem);
+  // }
 
   state.menu.menus.map(menu => {
     menuView.renderMenus(menu);
   });
-  state.menu.more.map(menu => {
-    menuView.renderSocial(menu);
-  });
+  // state.menu.more.map(menu => {
+  //   menuView.renderSocial(menu);
+  // });
   // console.log(state.menu.menus);
   state.menu.menus.map((menu, index) => {
     menuView.renderSubMenus(menu);
