@@ -28,18 +28,15 @@ export const createMenu = ({ name, subMenu, type }) => {
 export const createSubMenus = ({ subMenu }) => {
   let subArticle = "";
   subMenu.map((elem, index) => {
-    console.log(elem);
-
     if (elem.subArticles && elem.subArticles.length > 0) {
       for (let article in elem.subArticles) {
-        subArticle += `<li class="sub-article ${index}"><a class="article-font">${elem.subArticles[article]}</a></li>`;
+        console.log(elem.subArticles[article]);
+
+        subArticle += `<li class="sub-article ${index}"><a class="title-name">${elem.subArticles[article]}</a></li>`;
       }
     }
   });
-  return `
-      <li class="sub-article">
-        <a class="title-name">${subArticle}</a>
-      </li>`;
+  return `${subArticle}`;
 };
 
 export const createSocial = ({ name }) => {
