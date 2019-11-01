@@ -63,18 +63,8 @@ const controlMenu = () => {
       type: "menu-more"
     }
   ];
-  // console.log(elems);
 
-  // for (let elem of elems) {
-  //   console.log(elem);
-  // }
-  // elems.forEach((element, index, array) => {
-  //   console.log(element.name); // 100, 200, 300
-  //   console.log(element.subMenu); // 0, 1, 2
-  //   console.log(element.type); // same myArray object 3 times
-  // });
   for (let elem of elems) state.menu.addMenu(elem);
-  // console.log(elems);
 
   const icons = [
     {
@@ -87,7 +77,6 @@ const controlMenu = () => {
   for (let elem of icons) {
     state.menu.addMenu(elem);
   }
-  // console.log(state.menu);
 
   state.menu.menus.map(menu => {
     menuView.renderMenus(menu);
