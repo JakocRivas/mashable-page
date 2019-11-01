@@ -2,14 +2,20 @@ import { elements } from "./base";
 
 export const createMenu = ({ name, subMenu, type }) => {
   let menu = "";
+  let subArticle = "";
   let className = type === "menu-more" ? "more" : "submenu";
-  console.log(subMenu.length);
+  // console.log(subMenu.length);
 
-  subMenu.map(elem => {
-    console.log(elem.title);
-    console.log(elem.subArticles);
-    menu += `<li class="article"><a class="article-font">${elem.title}</a></li>`;
+  subMenu.map((elem, index) => {
+    // console.log(elem.title);
+    // console.log(elem.subArticles[0]);
+    menu += `<li class="article ${index}"><a class="article-font">${elem.title}</a></li>`;
+
+    if (elem.subArticles) {
+      subArticle += `<li class="article ${index}"><a class="article-font">${elem.subArticles[index]}</a></li>`;
+    }
   });
+  console.log(subArticle);
 
   return `
     <li class="title-menu">
@@ -31,8 +37,6 @@ export const createSocial = ({ name }) => {
     <a class="title-name">${name}</a>
   </li>
 `;
-
-  return markUp;
 };
 
 export const renderMenus = menu => {
