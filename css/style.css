@@ -271,6 +271,10 @@ ul {
 .submenu a {
 }
 
+.sub-article {
+  display: none;
+}
+
 .menu li:hover > .submenu-container {
   display: block;
 }

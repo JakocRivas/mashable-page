@@ -28,8 +28,11 @@ export const createMenu = ({ name, subMenu, type }) => {
 export const createSubMenus = ({ subMenu }) => {
   let subArticle = "";
   subMenu.map((elem, index) => {
-    if (elem.subArticles) {
-      subArticle += `<li class="article ${index}"><a class="article-font">${elem.subArticles[index]}</a></li>`;
+    if (elem.subArticles.length > 0) {
+      for (let article in elem.subArticles) {
+        console.log(article);
+        subArticle += `<li class="sub-article ${index}"><a class="article-font">${elem.subArticles[article]}</a></li>`;
+      }
     }
   });
   return `

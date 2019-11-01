@@ -34,38 +34,38 @@ const controlMenu = () => {
         }
       ],
       type: "subMenu"
-    }
+    },
 
-    // {
-    //   name: "CULTURE",
-    //   subMenu: [{ title: "bimbo" }, { title: "holiwis" }],
-    //   type: "submenu"
-    // },
-    // {
-    //   name: "TECH",
-    //   subMenu: [{ title: "simbo" }],
-    //   type: "submenu"
-    // },
-    // {
-    //   name: "SCIENCE",
-    //   subMenu: [{ title: "jimbo" }],
-    //   type: "submenu"
-    // },
-    // {
-    //   name: "SOCIAL GOOD",
-    //   subMenu: [{ title: "dumbo" }],
-    //   type: "submenu"
-    // },
-    // {
-    //   name: "SHOP",
-    //   subMenu: [{ title: "sumbo" }],
-    //   type: "menu-more"
-    // },
-    // {
-    //   name: "MORE",
-    //   subMenu: [{ title: "jumbo" }],
-    //   type: "menu-more"
-    // }
+    {
+      name: "CULTURE",
+      subMenu: [{ title: "bimbo" }, { title: "holiwis" }],
+      type: "submenu"
+    },
+    {
+      name: "TECH",
+      subMenu: [{ title: "simbo" }],
+      type: "submenu"
+    },
+    {
+      name: "SCIENCE",
+      subMenu: [{ title: "jimbo" }],
+      type: "submenu"
+    },
+    {
+      name: "SOCIAL GOOD",
+      subMenu: [{ title: "dumbo" }],
+      type: "submenu"
+    },
+    {
+      name: "SHOP",
+      subMenu: [{ title: "sumbo" }],
+      type: "menu-more"
+    },
+    {
+      name: "MORE",
+      subMenu: [{ title: "jumbo" }],
+      type: "menu-more"
+    }
   ];
 
   for (let elem of elems) state.menu.addMenu(elem);
