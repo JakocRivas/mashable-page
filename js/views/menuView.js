@@ -5,10 +5,10 @@ export const createMenu = ({ name, subMenu, type }) => {
   let className = type === "menu-more" ? "more" : "submenu";
   // console.log(subMenu);
 
-  for (let article of subMenu.keys) {
+  for (let article of Array.from(subMenu.title)) {
     // console.log(article);
     // console.log(article.subArticles.subMenu);
-    menu += `<li class="article"><a class="article-font">${article.name}</a></li>`;
+    menu += `<li class="article"><a class="article-font">${article.title}</a></li>`;
   }
 
   return `
