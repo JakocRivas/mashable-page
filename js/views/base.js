@@ -1,4 +1,5 @@
 export const elements = {
   menuContainer: document.querySelector(".menu-links"),
-  socialContainer:document.querySelector(".social-links")
+  subMenuContainer: document.querySelector(".article-post"),
+  socialContainer: document.querySelector(".social-links")
 };

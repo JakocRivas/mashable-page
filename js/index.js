@@ -21,47 +21,51 @@ const controlMenu = () => {
 
         {
           title: "menusito 2",
-          subArticles: ["article 1", "article 2", "super articulo numero tres"]
+          subArticles: [
+            "article 3",
+            "article 4",
+            "super articulo numero cuatro"
+          ]
         },
 
         {
           title: "menusito 3",
-          subArticles: ["article 1", "article 2", "super articulo numero tres"]
+          subArticles: ["article 5", "article 6", "super articulo numero cinco"]
         }
       ],
       type: "subMenu"
-    },
-
-    {
-      name: "CULTURE",
-      subMenu: [{ title: "bimbo" }, { title: "holiwis" }],
-      type: "submenu"
-    },
-    {
-      name: "TECH",
-      subMenu: [{ title: "simbo" }],
-      type: "submenu"
-    },
-    {
-      name: "SCIENCE",
-      subMenu: [{ title: "jimbo" }],
-      type: "submenu"
-    },
-    {
-      name: "SOCIAL GOOD",
-      subMenu: [{ title: "dumbo" }],
-      type: "submenu"
-    },
-    {
-      name: "SHOP",
-      subMenu: [{ title: "sumbo" }],
-      type: "menu-more"
-    },
-    {
-      name: "MORE",
-      subMenu: [{ title: "jumbo" }],
-      type: "menu-more"
     }
+
+    // {
+    //   name: "CULTURE",
+    //   subMenu: [{ title: "bimbo" }, { title: "holiwis" }],
+    //   type: "submenu"
+    // },
+    // {
+    //   name: "TECH",
+    //   subMenu: [{ title: "simbo" }],
+    //   type: "submenu"
+    // },
+    // {
+    //   name: "SCIENCE",
+    //   subMenu: [{ title: "jimbo" }],
+    //   type: "submenu"
+    // },
+    // {
+    //   name: "SOCIAL GOOD",
+    //   subMenu: [{ title: "dumbo" }],
+    //   type: "submenu"
+    // },
+    // {
+    //   name: "SHOP",
+    //   subMenu: [{ title: "sumbo" }],
+    //   type: "menu-more"
+    // },
+    // {
+    //   name: "MORE",
+    //   subMenu: [{ title: "jumbo" }],
+    //   type: "menu-more"
+    // }
   ];
 
   for (let elem of elems) state.menu.addMenu(elem);
@@ -83,6 +87,10 @@ const controlMenu = () => {
   });
   state.menu.more.map(menu => {
     menuView.renderSocial(menu);
+  });
+  // console.log(state.menu.menus);
+  state.menu.menus.map((menu, index) => {
+    menuView.renderSubMenus(menu);
   });
 };
 controlMenu();
