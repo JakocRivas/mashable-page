@@ -286,7 +286,10 @@ ul {
   /* white-space: nowrap; */
 }
 .article-post {
-  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* position: relative; */
   background-color: #ddf0f9;
   width: 80vw;
   height: 100%;
@@ -295,7 +298,8 @@ ul {
 }
 
 .sub-article {
-  /* background-color: blue; */
+  background-color: blue;
+  width: 200px;
 }
 .title-label {
   font-size: 14px;
