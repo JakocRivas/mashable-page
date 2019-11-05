@@ -16,12 +16,13 @@ export const createMenu = ({ name, subMenu, type }) => {
   // console.log(subMenu.length);
 
   subMenu.forEach((elem, index) => {
-    let article = ''
+    let article = "";
     if (elem.subArticles && elem.subArticles.length > 0) {
-    elem.subArticles.forEach((elem,index) => {
-      article += `<li class="sub-article ${index}"><a class="title-name">${elem}</a></li>`
-    })}
-    menu += `<li class="article ${index}"><a class="article-font">${elem.title}<ul class="article-post">${article}</ul></a></li>`
+      elem.subArticles.forEach((elem, index) => {
+        subArticle += `<li class="sub-article ${index}"><a class="title-label">${elem}</a></li>`;
+      });
+    }
+    menu += `<li class="article ${index}"><a class="article-font">${elem.title}</a></li>`;
   });
 
   return `
@@ -30,7 +31,7 @@ export const createMenu = ({ name, subMenu, type }) => {
         ${
           subMenu.length > 0
             ? type !== "menu-more"
-              ? `<div class='submenu-container'><ul class='${className}'>${menu}</ul></div>`
+              ? `<div class='submenu-container'><div><ul class='${className}'>${menu}</ul></div><div class="sub-articles-container"><ul class="article-post">${subArticle}</ul></div></div>`
               : `<div class='submenu-container'><ul class='${className}'>${"more menu"}</ul></div>`
             : ""
         }
@@ -64,7 +65,7 @@ export const renderMenus = menu => {
   const markup = createMenu(menu);
   elements.menuContainer.insertAdjacentHTML("beforeend", markup);
 };
-console.log(elements.subMenuContainer);
+// console.log(elements.subMenuContainer);
 // export const renderSubMenus = subMenu => {
 //   const markup = createSubMenus(subMenu);
 //   ".article-post".insertAdjacentHTML("beforeend", markup);

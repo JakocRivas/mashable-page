@@ -20,17 +20,17 @@ const controlMenu = () => {
         },
 
         {
-          title: "menusito 2",
-          subArticles: [
-            "article 3",
-            "article 4",
-            "super articulo numero cuatro"
-          ]
+          title: "menusito 2"
+          // subArticles: [
+          // "article 3",
+          // "article 4"
+          // "super articulo numero cuatro"
+          // ]
         },
 
         {
-          title: "menusito 3",
-          subArticles: ["article 5", "article 6", "super articulo numero cinco"]
+          title: "menusito 3"
+          // subArticles: ["article 5", "article 6", "super articulo numero cinco"]
         }
       ],
       type: "subMenu"
@@ -78,16 +78,15 @@ const controlMenu = () => {
     { name: "twitter" },
     { name: "profile" }
   ];
-  // for (let elem of icons) {
-  //   state.menu.addMenu(elem);
-  // }
+
+  for (let elem of icons) state.menu.addMenu(elem);
 
   state.menu.menus.map(menu => {
     menuView.renderMenus(menu);
   });
-  // state.menu.more.map(menu => {
-  //   menuView.renderSocial(menu);
-  // });
+  state.menu.more.map(menu => {
+    menuView.renderSocial(menu);
+  });
   // console.log(state.menu.menus);
   // state.menu.menus.map((menu, index) => {
   //   menuView.renderSubMenus(menu);
