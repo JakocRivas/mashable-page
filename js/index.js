@@ -89,9 +89,9 @@ const controlMenu = () => {
   //   menuView.renderSocial(menu);
   // });
   // console.log(state.menu.menus);
-  state.menu.menus.map((menu, index) => {
-    menuView.renderSubMenus(menu);
-  });
+  // state.menu.menus.map((menu, index) => {
+  //   menuView.renderSubMenus(menu);
+  // });
 };
 controlMenu();
 
