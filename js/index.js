@@ -16,7 +16,13 @@ const controlMenu = () => {
       subMenu: [
         {
           title: "menusito 1",
-          subArticles: ["article 1", "article 2", "super articulo numero tres"]
+          subArticles: [
+            "article 1",
+            "article 2",
+            "super articulo numero tres",
+            "number four",
+            "and five"
+          ]
         },
 
         {
