@@ -18,11 +18,9 @@ export const createMenu = ({ name, subMenu, type }) => {
   subMenu.forEach((elem, index) => {
     let article = ''
     if (elem.subArticles && elem.subArticles.length > 0) {
-    // elem.subArticles.forEach((elem,index) => {
-      article += `<li class="sub-article ${index}"><a class="title-name">${elem.subArticles}</a></li>`
-    // }
-    // )
-  }
+    elem.subArticles.forEach((elem,index) => {
+      article += `<li class="sub-article ${index}"><a class="title-name">${elem}</a></li>`
+    })}
     menu += `<li class="article ${index}"><a class="article-font">${elem.title}<ul class="article-post">${article}</ul></a></li>`
   });
 
