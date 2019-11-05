@@ -303,6 +303,9 @@ ul {
   color: #333333;
   white-space: normal;
 }
+.title-label:hover {
+  text-decoration: underline;
+}
 
 .menu li:hover > .submenu-container {
   display: flex;
