@@ -100,6 +100,8 @@ ul {
   display: none;
 }
 
+/* HAMBURGER VIEW */
+
 .hamburger div {
   width: 25px;
   height: 3px;
@@ -119,6 +121,9 @@ ul {
     overflow-x: hidden;
   }
   .social {
+    display: none;
+  }
+  #icon {
     display: none;
   }
   .menu-links {
@@ -170,6 +175,7 @@ ul {
 .toggle .line3 {
   transform: rotate(45deg) translate(-5px, -6px);
 }
+/* HAMBURGER VIEW */
 
 .submenu-container {
   position: fixed;
