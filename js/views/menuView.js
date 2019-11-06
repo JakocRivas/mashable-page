@@ -28,13 +28,10 @@ export const createMenu = ({ name, subMenu, type, id }) => {
     let article = "";
 
     if (elem.subArticles && elem.subArticles.length > 0) {
-      console.log(id, "this is inside sub articles");
       id = id;
       article += createArticleLI(elem, id);
     }
-    console.log(article);
 
-    console.log(id, "this one is inside the submenus");
     subArticle += `<div class="${id}"><ul class="article-post">${article}</ul></div>`;
     menu += `<li class="article ${id}"><a class="article-font">${elem.title}</a></li>`;
   });
