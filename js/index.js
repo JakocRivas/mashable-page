@@ -100,6 +100,20 @@ const controlMenu = () => {
 };
 controlMenu();
 
+Array.from(document.querySelectorAll(".article")).forEach(elem => {
+  elem.addEventListener("mouseover", function() {
+    const id = elem.getAttribute("class").split(" ");
+    console.log(id[1]);
+    document.querySelector(`div.${id[1]}`).classList.add("hover");
+  });
+});
+Array.from(document.querySelectorAll(".article")).forEach(elem => {
+  elem.addEventListener("mouseout", function() {
+    const id = elem.getAttribute("class").split(" ");
+    console.log(id[1]);
+    document.querySelector(`div.${id[1]}`).classList.remove("hover");
+  });
+});
 // const navSlide = () => {
 //   const burger = document.querySelector(".hamburger");
 //   const nav = document.querySelector(".menu-links");

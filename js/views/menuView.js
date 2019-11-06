@@ -15,15 +15,15 @@ export const createMenu = ({ name, subMenu, type, id }) => {
   //   }
   // });
   // console.log(subMenu.length);
-  function createArticleLI(macaco, id) {
-    let map = macaco.subArticles.map(li => {
-      return `<li class="sub-article ${id}"><a class="title-label">${li}</a></li>`;
+  function createArticleLI(submenu, id) {
+    let map = submenu.subArticles.map(li => {
+      return `<li class="sub-article><a class="title-label">${li}</a></li>`;
     });
     return map.join().replace(/,/g, "");
   }
 
   subMenu.forEach((elem, index) => {
-    id = uniqid();
+    id = uniqid("submenu-");
     // console.log(id);
     let article = "";
 
@@ -32,13 +32,13 @@ export const createMenu = ({ name, subMenu, type, id }) => {
       article += createArticleLI(elem, id);
     }
 
-    subArticle += `<div class="${id}"><ul class="article-post">${article}</ul></div>`;
+    subArticle += `<div class="subArticles ${id}"><ul class="article-post">${article}</ul></div>`;
     menu += `<li class="article ${id}"><a class="article-font">${elem.title}</a></li>`;
   });
 
   return `
     <li class="title-menu">
-      <a class="title-name">${name}</a>
+      <a class="title-name ${id}">${name}</a>
         ${
           subMenu.length > 0
             ? type !== "menu-more"
