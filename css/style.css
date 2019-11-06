@@ -12,12 +12,6 @@
   background-color: #00aeef;
   width: 100vw;
   position: fixed; /* Make it stick, even on scroll */
-  /* margin: 0 auto; */
-  /* left: 0; */
-  /* right: 0; */
-  /* top: 0; */
-  /* z-index: 10; */
-  /* box-sizing: border-box; */
 }
 
 /* change the default styling of the ul elements to none */
@@ -42,7 +36,6 @@ ul {
   font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   font-size: 10px;
-  /* font-weight: bold; */
 }
 .title-menu li:hover,
 .title-menu a:hover,
@@ -57,14 +50,11 @@ ul {
   padding: 8px 10px;
   margin-right: 20px;
   cursor: pointer;
-  /* height: 43px; */
 }
 #icon a img {
   width: 131px;
 }
-#icon:hover {
-  /* background-color: transparent; */
-}
+
 .dark {
   width: 100%;
   display: none;
@@ -80,13 +70,6 @@ ul {
   display: block;
 }
 
-/* .navigation a {
-  font-family: Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-  font-size: 10px;
-  /* font-weight: bold; */
-/* } */
-
 /* change the color of the li elements when the mouse is on hover */
 .menu li:hover,
 .title-social:hover {
@@ -94,47 +77,23 @@ ul {
   color: #00aeef;
 }
 
-/* puts the search facebook twitter and sign in buttons to the left of the page */
-/* .social {
-  margin-left: 70%;
-} */
-
-/* displays menu in-line */
-/* .menu {
-  margin-right: 30%;
-} */
-
 /* puts the li elements on the social class side by side */
 .social {
-  /* float: right; */
-  /* margin-right: 20px; */
-  /* align-self: flex-end; */
   justify-content: flex-end;
 }
 /* puts the li elements on the menu class side by side */
 .menu {
-  /* float: left; */
-  /* margin-right: 20px; */
   justify-content: flex-start;
 }
 
 .menu-links {
   display: flex;
   justify-content: space-around;
-
-  /* width: -70%; */
 }
-
-/* .menu-links li, */
-/* .social-links li { */
-/* background-color: red; */
-/* } */
 
 .social-links {
   display: flex;
   justify-content: space-around;
-
-  /* width: -30%; */
 }
 
 .hamburger {
@@ -170,12 +129,10 @@ ul {
     background-color: #555;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     width: 50%;
     transform: translateX(-100%);
     transition: transform 0.5s ease-in;
-    /* font-size: 20px; */
   }
   .hamburger {
     display: block;
@@ -184,10 +141,8 @@ ul {
     right: calc(60%);
   }
   .menu-links li {
-    /* background-color: rgb(230, 17, 17); */
     opacity: 0;
     color: white;
-    /* background-color: white; */
     transition: transform 0.5s ease-in;
   }
 }
@@ -217,9 +172,7 @@ ul {
 }
 
 .submenu-container {
-  /* display:block; */
-
-  position: absolute;
+  position: fixed;
   background: #ddf0f9;
   width: 100%;
   left: 0;
@@ -246,22 +199,13 @@ ul {
   font-size: 1.1rem;
   font-weight: 900;
 }
-/* .submenu li:hover {
-  background-color: #ddf0f9;
-  color: #0698dd;
-} */
+
 .article {
-  /* height: 15px; */
   position: relative;
   width: 100%;
   padding-right: 25px;
-  /* padding: 20px; */
   padding-top: 5px;
 }
-/* .article:not(:first-child) { */
-/* margin: 10px 0; */
-/* margin-bottom: 6px; */
-/* } */
 
 .article:hover {
   background-color: #ddf0f9;
@@ -269,22 +213,10 @@ ul {
 }
 
 .sub-articles-container {
-  /* display: flex; */
-  /* display: inline-block; */
-  /* background-color: gray; */
-  /* position: absolute; */
   top: 0;
-  /* margin-left: 250px; */
   width: 100%;
-  /* right:0; */
-  /* width:100%; */
-  /* margin-top: 5px; */
-  /* height:180px; */
-  /* border-bottom:5px solid #00aeef */
 }
-.story {
-  /* white-space: nowrap; */
-}
+
 .article-post {
   display: flex;
   flex-direction: row;
@@ -306,7 +238,7 @@ ul {
   width: 200px;
 }
 
-.hover {
+.hidden {
   display: block;
 }
 

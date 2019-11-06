@@ -35,8 +35,8 @@ const controlMenu = () => {
         },
 
         {
-          title: "menusito 3"
-          // subArticles: ["article 5", "article 6", "super articulo numero cinco"]
+          title: "menusito 3",
+          subArticles: ["article 5", "article 6", "super articulo numero cinco"]
         }
       ],
       type: "subMenu"
@@ -44,22 +44,25 @@ const controlMenu = () => {
 
     {
       name: "CULTURE",
-      subMenu: [{ title: "bimbo" }, { title: "holiwis" }],
+      subMenu: [
+        { title: "bimbo", subArticles: ["super", "super 2", "super3"] },
+        { title: "holiwis", subArticles: ["hyper", "super 4", "incredible"] }
+      ],
       type: "submenu"
     },
     {
       name: "TECH",
-      subMenu: [{ title: "simbo" }],
+      subMenu: [{ title: "simbo", subArticles: ["dembow"] }],
       type: "submenu"
     },
     {
       name: "SCIENCE",
-      subMenu: [{ title: "jimbo" }],
+      subMenu: [{ title: "jimbo", subArticles: ["cyka blyat", "motolcito"] }],
       type: "submenu"
     },
     {
       name: "SOCIAL GOOD",
-      subMenu: [{ title: "dumbo" }],
+      subMenu: [{ title: "dumbo", subArticles: ["ypa", "comrade"] }],
       type: "submenu"
     },
     {
@@ -93,10 +96,6 @@ const controlMenu = () => {
   state.menu.more.map(menu => {
     menuView.renderSocial(menu);
   });
-  // console.log(state.menu.menus);
-  // state.menu.menus.map((menu, index) => {
-  //   menuView.renderSubMenus(menu);
-  // });
 };
 controlMenu();
 
@@ -104,14 +103,14 @@ Array.from(document.querySelectorAll(".article")).forEach(elem => {
   elem.addEventListener("mouseover", function() {
     const id = elem.getAttribute("class").split(" ");
     console.log(id[1]);
-    document.querySelector(`div.${id[1]}`).classList.add("hover");
+    document.querySelector(`div.${id[1]}`).classList.add("hidden");
   });
 });
 Array.from(document.querySelectorAll(".article")).forEach(elem => {
   elem.addEventListener("mouseout", function() {
     const id = elem.getAttribute("class").split(" ");
     console.log(id[1]);
-    document.querySelector(`div.${id[1]}`).classList.remove("hover");
+    document.querySelector(`div.${id[1]}`).classList.remove("hidden");
   });
 });
 // const navSlide = () => {
