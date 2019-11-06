@@ -26,12 +26,12 @@ const controlMenu = () => {
         },
 
         {
-          title: "menusito 2"
-          // subArticles: [
-          // "article 3",
-          // "article 4"
-          // "super articulo numero cuatro"
-          // ]
+          title: "menusito 2",
+          subArticles: [
+            "article 3",
+            "article 4",
+            "super articulo numero cuatro"
+          ]
         },
 
         {

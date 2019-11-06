@@ -1,3 +1,4 @@
+var uniqid = require("uniqid");
 export default class Menu {
   constructor() {
     this.menus = [];
@@ -8,7 +9,8 @@ export default class Menu {
     const menu = {
       name,
       subMenu,
-      type
+      type,
+      id: ""
     };
 
     if (this.menus.length < 8 && name.length > 0) {
