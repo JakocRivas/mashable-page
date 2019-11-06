@@ -114,7 +114,7 @@ Array.from(document.querySelectorAll(".article")).forEach(elem => {
   });
 });
 
-/* HAMBURGER CONTROLLLER */
+/* HAMBURGER CONTROLLER */
 const navSlide = () => {
   const burger = document.querySelector(".hamburger");
   const nav = document.querySelector(".menu-links");
