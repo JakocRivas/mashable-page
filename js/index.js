@@ -72,7 +72,24 @@ const controlMenu = () => {
     },
     {
       name: "MORE",
-      subMenu: [{ title: "jumbo" }],
+      subMenu: [
+        {
+          title: "channels",
+          subArticles: [
+            "video",
+            "entertainment",
+            "culture",
+            "tech",
+            "science",
+            "social good"
+          ]
+        },
+        {
+          title: "news",
+          subArticles: ["/pol/", "cnn", "fox news", "black pigeon"]
+        },
+        { title: "sports", subArticles: ["baseball"] }
+      ],
       type: "menu-more"
     }
   ];
