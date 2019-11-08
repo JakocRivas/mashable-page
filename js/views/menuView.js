@@ -27,7 +27,7 @@ export const createMenu = ({ name, subMenu, type, id }) => {
   }
 
   subMenu.forEach((elem, index) => {
-    id = uniqid("submenu-");
+    id = uniqid("id-");
     let article = "";
 
     if (elem.subArticles && elem.subArticles.length > 0) {
