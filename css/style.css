@@ -261,3 +261,11 @@ ul {
 .menu li:hover > .submenu-container {
   display: flex;
 }
+
+.more {
+  display: flex;
+  /* align-content: space-evenly; */
+  width: 100%;
+  position: relative;
+  justify-content: space-evenly;
+}
