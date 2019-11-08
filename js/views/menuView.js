@@ -10,25 +10,24 @@ export const createMenu = ({ name, subMenu, type, id }) => {
     subMenu.forEach(element => {
       id = uniqid();
       let article = "";
-      console.log(element);
       if (element.subArticles && element.subArticles.length > 0) {
         id = id;
         article += createArticleLI(element, id);
       }
+
       column += `<ul class="menu__more-articles"><li class="title-menu-more">${element.title}</li>${article}</ul>`;
     });
   }
 
   function createArticleLI(submenu, id) {
-    let map = submenu.subArticles.map(li => {
-      return `<li class="sub-article><a class="title-label">${li}</a></li>`;
+    let map = submenu.subArticles.map(subMenu => {
+      return `<li class="menu__more-sub-article"><a class="title-label">${subMenu}</a></li>`;
     });
     return map.join().replace(/,/g, "");
   }
 
   subMenu.forEach((elem, index) => {
     id = uniqid("submenu-");
-    // console.log(id);
     let article = "";
 
     if (elem.subArticles && elem.subArticles.length > 0) {
@@ -39,7 +38,6 @@ export const createMenu = ({ name, subMenu, type, id }) => {
     subArticle += `<div class="subArticles ${id}"><ul class="article-post">${article}</ul></div>`;
     menu += `<li class="article ${id}"><a class="article-font">${elem.title}</a></li>`;
   });
-
   return `
     <li class="title-menu">
       <a class="title-name ${id}">${name}</a>
