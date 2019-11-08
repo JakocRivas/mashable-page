@@ -71,7 +71,7 @@ ul {
 }
 
 /* change the color of the li elements when the mouse is on hover */
-.menu li:hover,
+.title-menu:hover,
 .title-social:hover {
   background-color: #ddf0f9;
   color: #00aeef;
@@ -264,8 +264,23 @@ ul {
 
 .more {
   display: flex;
-  /* align-content: space-evenly; */
   width: 100%;
   position: relative;
   justify-content: space-evenly;
+}
+.title-menu-more {
+  font: 12px "ProximaNovaRegular", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #555555;
+  padding-bottom: 5%;
+}
+
+.menu__more-articles {
+  width: 10%;
+  border-right: 1px solid black;
+}
+
+.menu__more-articles .sub-article {
+  color: #0076a3;
 }
