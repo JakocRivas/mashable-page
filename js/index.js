@@ -204,27 +204,17 @@ controlMenu();
 
 let container = document.querySelector(".sub-articles-container");
 let elementContained = document.querySelectorAll(".article");
+let clickedElement;
 
 Array.from(elementContained).forEach(elem => {
   elem.addEventListener("mouseover", function() {
     const id = elem.getAttribute("class").split(" ");
     console.log(id[1]);
-    document.querySelector(`div.${id[1]}`).classList.add("hidden");
-  });
-});
-
-container.addEventListener("focus", function() {
-  Array.from(elementContained).forEach(elem => {
-    const id = elem.getAttribute("class").split(" ");
-    console.log(id[1]);
-    document.querySelector(`div.${id[1]}`).classList.remove("hidden");
-  });
-});
-
-Array.from(document.querySelectorAll(".article")).forEach(elem => {
-  elem.addEventListener("mouseout", function() {
-    const id = elem.getAttribute("class").split(" ");
-    console.log(id[1]);
+    if (clickedElement) {
+      clickedElement.classList.remove("hidden");
+    }
+    const hoveredElement = document.querySelector(`div.${id[1]}`);
+    clickedElement = hoveredElement;
     document.querySelector(`div.${id[1]}`).classList.toggle("hidden");
   });
 });
