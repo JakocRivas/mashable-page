@@ -202,9 +202,9 @@ const controlMenu = () => {
 };
 controlMenu();
 
-let container = document.querySelector(".sub-articles-container");
-let elementContained = document.querySelectorAll(".article");
-let clickedElement;
+let container = document.querySelector(".sub-articles-container"),
+  elementContained = document.querySelectorAll(".article"),
+  clickedElement;
 
 Array.from(elementContained).forEach(elem => {
   elem.addEventListener("mouseover", function() {
