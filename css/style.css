@@ -127,7 +127,9 @@ ul {
     display: none;
   }
   .menu li:hover > .submenu-container,
-  .submenu {
+  .submenu,
+  .more,
+  .menu__more-articles {
     display: none;
     height: 0;
     width: 0;
@@ -138,8 +140,16 @@ ul {
   .social {
     display: none;
   }
+
+  .header {
+    /* bottom: 30px; */
+    position: fixed;
+  }
   #icon {
-    display: none;
+    display: block;
+    position: inherit;
+    top: 0;
+    /* height: 5%; */
   }
   .menu-links {
     position: absolute;
@@ -160,7 +170,7 @@ ul {
     position: relative;
     right: calc(60%);
   }
-  .menu-links li {
+  .menu-links li:not(:first-child) {
     opacity: 0;
     color: white;
     transition: transform 0.5s ease-in;
