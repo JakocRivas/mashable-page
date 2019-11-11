@@ -120,6 +120,21 @@ ul {
   body {
     overflow-x: hidden;
   }
+  .submenu-container,
+  .submenu,
+  .sub-articles-container,
+  .subArticles {
+    display: none;
+  }
+  .menu li:hover > .submenu-container,
+  .submenu {
+    display: none;
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+  }
+
   .social {
     display: none;
   }
