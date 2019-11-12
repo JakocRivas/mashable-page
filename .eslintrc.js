@@ -5,8 +5,9 @@ module.exports = {
     node: true,
   },
   extends: [
-    'airbnb-base',
+    ['airbnb-base','prettier','plugin:node/recommended'],
   ],
+  plugins: ["prettier"],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -16,5 +17,9 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    "prettier/prettier":"error",
+    "no-unused-vars":"warn",
+    "func-names":'off',
+    'object-shorthand':'off'
   },
 };
