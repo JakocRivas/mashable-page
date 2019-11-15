@@ -63,6 +63,9 @@ ul {
   width: 100%;
   display: block;
 }
+#icon:hover {
+  background-color: #ddf0f9;
+}
 #icon:hover > a .light {
   display: none;
 }
