@@ -1,4 +1,4 @@
-const elems = [
+export const elems = [
   {
     name: "VIDEO"
   },
@@ -166,8 +166,7 @@ const elems = [
     type: "menu-more"
   }
 ];
-export default elems;
-const icons = [
+export const icons = [
   {
     name: "search"
   },
@@ -175,4 +174,3 @@ const icons = [
   { name: "twitter" },
   { name: "profile" }
 ];
-export default icons;

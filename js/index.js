@@ -8,20 +8,11 @@ const state = {};
 const controlMenu = () => {
   if (!state.menu) state.menu = new Menu();
 
-  const elems = navMenus.elems;
-  // for (let elem of elems) state.menu.addMenu(elem);
+  const { elems } = navMenus;
   elems.forEach(elem => state.menu.addMenu(elem));
 
-  const icons = [
-    {
-      name: "search"
-    },
-    { name: "facebook" },
-    { name: "twitter" },
-    { name: "profile" }
-  ];
+  const { icons } = navMenus;
 
-  // for (let elem of icons) state.menu.addMenu(elem);
   icons.forEach(elem => state.menu.addMenu(elem));
 
   state.menu.menus.forEach(menu => {
@@ -33,7 +24,6 @@ const controlMenu = () => {
 };
 controlMenu();
 
-// let container = document.querySelector(".sub-articles-container"),
 const elementContained = document.querySelectorAll(".article");
 let clickedElement;
 
@@ -53,7 +43,6 @@ Array.from(elementContained).forEach(elem => {
 const navSlide = () => {
   const burger = document.querySelector(".hamburger");
   const nav = document.querySelector(".menu-links");
-  // ".menu-links li.title-menu:not(:first-child)"
   const navLinks = document.querySelectorAll(".title-menu");
 
   // Toggle nav
