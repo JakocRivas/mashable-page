@@ -1,3 +1,4 @@
+// This function is to create the html snippet for all the li articles in each sub menu
 export const articleLiMarkUp = function(subMenuLI) {
   return `
         <li class="menu__more-sub-article">
@@ -6,6 +7,7 @@ export const articleLiMarkUp = function(subMenuLI) {
         `;
 };
 
+// This is to create the html snippet of all the ul elements inside the sub menus with the type of more
 export const columnMarkUp = function(element, article) {
   return ` 
             <ul class="menu__more-articles">
@@ -14,6 +16,7 @@ export const columnMarkUp = function(element, article) {
         `;
 };
 
+// This is to create al the sub articles html snippets for the articles in the sub menus of the type sub menu
 export const subArticleMarkUp = function(ID, article) {
   return `
         <div class="subArticles ${ID}">
@@ -22,6 +25,7 @@ export const subArticleMarkUp = function(ID, article) {
     `;
 };
 
+// This is for the menus of the left side of the nav bar with the class menu
 export const menuMarkUp = function(id, elem) {
   return `
         <li class="article ${id}">
@@ -29,6 +33,8 @@ export const menuMarkUp = function(id, elem) {
         </li>
     `;
 };
+
+// This is for the menus of the left side of the nav bar with the class social
 export const navBarSocialMarkUp = function(name) {
   return `
         <li class="title-social">
@@ -37,6 +43,7 @@ export const navBarSocialMarkUp = function(name) {
         `;
 };
 
+// This is to make up the html snippet for the nav bar
 export const navBarMenuMarkUp = function(
   id,
   name,
