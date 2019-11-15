@@ -1,17 +1,26 @@
-import { elements } from "./base";
-var uniqid = require("uniqid");
+import elements from "./base";
+
+const uniqid = require("uniqid");
+
 export const createMenu = ({ name, subMenu, type, id }) => {
   let menu = "";
-  let className = type === "menu-more" ? "more" : "submenu";
+  const className = type === "menu-more" ? "more" : "submenu";
   let subArticle = "";
   let column = "";
 
+  function createArticleLI(submenu) {
+    const map = submenu.subArticles.map(subMenuLI => {
+      return `<li class="menu__more-sub-article"><a class="title-label">${subMenuLI}</a></li>`;
+    });
+    return map.join().replace(/,/g, "");
+  }
+
   if (type === "menu-more") {
     subMenu.forEach(element => {
-      id = uniqid();
+      const newID = uniqid();
       let article = "";
       if (element.subArticles && element.subArticles.length > 0) {
-        id = id;
+        id = newID;
         article += createArticleLI(element, id);
       }
 
@@ -19,24 +28,17 @@ export const createMenu = ({ name, subMenu, type, id }) => {
     });
   }
 
-  function createArticleLI(submenu, id) {
-    let map = submenu.subArticles.map(subMenu => {
-      return `<li class="menu__more-sub-article"><a class="title-label">${subMenu}</a></li>`;
-    });
-    return map.join().replace(/,/g, "");
-  }
-
-  subMenu.forEach((elem, index) => {
-    id = uniqid("id-");
+  subMenu.forEach(elem => {
+    const newID = uniqid("id-");
     let article = "";
 
     if (elem.subArticles && elem.subArticles.length > 0) {
-      id = id;
+      id = newID;
       article += createArticleLI(elem, id);
     }
 
-    subArticle += `<div class="subArticles ${id}"><ul class="article-post">${article}</ul></div>`;
-    menu += `<li class="article ${id}"><a class="article-font">${elem.title}</a></li>`;
+    subArticle += `<div class="subArticles ${newID}"><ul class="article-post">${article}</ul></div>`;
+    menu += `<li class="article ${newID}"><a class="article-font">${elem.title}</a></li>`;
   });
   return `
     <li class="title-menu">

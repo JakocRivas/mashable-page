@@ -1,8 +1,7 @@
 import Menu from "./models/menu";
 import * as menuView from "./views/menuView";
-import { elements } from "./views/base";
 
-let state = {};
+const state = {};
 
 const controlMenu = () => {
   if (!state.menu) state.menu = new Menu();
@@ -180,7 +179,8 @@ const controlMenu = () => {
     }
   ];
 
-  for (let elem of elems) state.menu.addMenu(elem);
+  // for (let elem of elems) state.menu.addMenu(elem);
+  elems.forEach(elem => state.menu.addMenu(elem));
 
   const icons = [
     {
@@ -191,25 +191,25 @@ const controlMenu = () => {
     { name: "profile" }
   ];
 
-  for (let elem of icons) state.menu.addMenu(elem);
+  // for (let elem of icons) state.menu.addMenu(elem);
+  icons.forEach(elem => state.menu.addMenu(elem));
 
-  state.menu.menus.map(menu => {
+  state.menu.menus.forEach(menu => {
     menuView.renderMenus(menu);
   });
-  state.menu.more.map(menu => {
+  state.menu.more.forEach(menu => {
     menuView.renderSocial(menu);
   });
 };
 controlMenu();
 
-let container = document.querySelector(".sub-articles-container"),
-  elementContained = document.querySelectorAll(".article"),
-  clickedElement;
+// let container = document.querySelector(".sub-articles-container"),
+const elementContained = document.querySelectorAll(".article");
+let clickedElement;
 
 Array.from(elementContained).forEach(elem => {
   elem.addEventListener("mouseover", function() {
     const id = elem.getAttribute("class").split(" ");
-    console.log(id[1]);
     if (clickedElement) {
       clickedElement.classList.remove("hidden");
     }
