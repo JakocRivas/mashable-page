@@ -26,6 +26,8 @@
     "object-shorthand": "off",
     "no-param-reassign": "off",
     "no-nested-ternary": "off",
-    "consistent-return": "off"
+    "consistent-return": "off",
+    "no-console": "off",
+    "no-alert": "off"
   }
 }

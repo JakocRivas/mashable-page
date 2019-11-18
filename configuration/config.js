@@ -16,11 +16,11 @@ export default class Search {
       const res = await axios(
         `https://newsapi.org/v2/top-headlines?country=${this.country}&apiKey=${key}`
       );
-      this.results = res.data.articles;
-      console.log(this.results);
-      // console.log(this.results);
+      this.results = await Object.values(res.data.articles);
+      return this.results;
     } catch (error) {
       alert(`wrong api key error: ${error}`);
     }
+    // return this.results.json;
   }
 }

@@ -1,16 +1,15 @@
 import Search from "../configuration/config";
 
-const some = new Search("us");
-some.getResults();
-export const elems = [
+const elems = [
   {
     name: "VIDEO"
   },
+
   {
     name: "ENTERTAINMENT",
     subMenu: [
       {
-        title: "menusito 1",
+        title: "title",
         subArticles: [
           "article 1",
           "article 2",
@@ -33,29 +32,29 @@ export const elems = [
     type: "subMenu"
   },
 
-  {
-    name: "CULTURE",
-    subMenu: [
-      { title: "bimbo", subArticles: ["super", "super 2", "super3"] },
-      { title: "holiwis", subArticles: ["hyper", "super 4", "incredible"] }
-    ],
-    type: "submenu"
-  },
-  {
-    name: "TECH",
-    subMenu: [{ title: "simbo", subArticles: ["dembow"] }],
-    type: "submenu"
-  },
-  {
-    name: "SCIENCE",
-    subMenu: [{ title: "jimbo", subArticles: ["cyka blyat", "motolcito"] }],
-    type: "submenu"
-  },
-  {
-    name: "SOCIAL GOOD",
-    subMenu: [{ title: "dumbo", subArticles: ["ypa", "comrade"] }],
-    type: "submenu"
-  },
+  // {
+  //   name: "CULTURE",
+  //   subMenu: [
+  //     { title: "bimbo", subArticles: ["super", "super 2", "super3"] },
+  //     { title: "holiwis", subArticles: ["hyper", "super 4", "incredible"] }
+  //   ],
+  //   type: "submenu"
+  // },
+  // {
+  //   name: "TECH",
+  //   subMenu: [{ title: "simbo", subArticles: ["dembow"] }],
+  //   type: "submenu"
+  // },
+  // {
+  //   name: "SCIENCE",
+  //   subMenu: [{ title: "jimbo", subArticles: ["cyka blyat", "motolcito"] }],
+  //   type: "submenu"
+  // },
+  // {
+  //   name: "SOCIAL GOOD",
+  //   subMenu: [{ title: "dumbo", subArticles: ["ypa", "comrade"] }],
+  //   type: "submenu"
+  // },
   {
     name: "SHOP",
     subMenu: [
@@ -170,7 +169,7 @@ export const elems = [
     type: "menu-more"
   }
 ];
-export const icons = [
+const icons = [
   {
     name: "search"
   },
@@ -178,3 +177,36 @@ export const icons = [
   { name: "twitter" },
   { name: "profile" }
 ];
+
+const data = {};
+
+const searchControl = async () => {
+  data.search = new Search("us");
+
+  try {
+    await data.search.getResults();
+    // console.log(data.search.results[0].title);
+
+    if (data.search.results) {
+      elems.forEach(elem => {
+        if (elem.subMenu !== undefined && elem.type === "subMenu") {
+          elem.subMenu.forEach((unused, index) => {
+            elem.subMenu[index].title = data.search.results[index].title;
+          });
+          console.log(elem.subMenu);
+          // console.log(elem);
+          // console.log(data.search.results[index].title);
+        }
+      });
+    }
+  } catch (error) {
+    console.error(`there seems to be a problem fetching the data ${error}`);
+  }
+};
+
+searchControl();
+console.log(elems);
+// console.log(data.search);
+// title
+// urlToImage
+export { elems, icons };
