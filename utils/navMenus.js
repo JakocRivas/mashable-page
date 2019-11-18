@@ -1,3 +1,7 @@
+import Search from "../configuration/config";
+
+const some = new Search("us");
+some.getResults();
 export const elems = [
   {
     name: "VIDEO"
