@@ -31,13 +31,12 @@ const controlMenu = async () => {
     menuView.renderSocial(menu);
   });
 };
-controlMenu();
 
 const elementContained = document.querySelectorAll(".article");
 let clickedElement;
 
 Array.from(elementContained).forEach(async elem => {
-  await elem.addEventListener("mouseover", function() {
+  elem.addEventListener("mouseover", function() {
     const id = elem.getAttribute("class").split(" ");
     if (clickedElement) {
       clickedElement.classList.remove("hidden");
@@ -48,6 +47,7 @@ Array.from(elementContained).forEach(async elem => {
   });
 });
 
+controlMenu();
 /* HAMBURGER CONTROLLER */
 const navSlide = () => {
   const burger = document.querySelector(".hamburger");
