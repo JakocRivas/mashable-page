@@ -40,23 +40,13 @@ const searchControl = async () => {
         type: "subMenu"
       };
     });
-    // console.log(await values);
     return await values;
-
-    // if (data.search.results) {
-    //   const menus = data.search.results.map(elem => {
-    //     return {
-    //       title: elem.title
-    //     };
-    //   });
-    // }
   } catch (error) {
     console.error(`there seems to be a problem fetching the data ${error}`);
   }
 };
 
 const elems = searchControl();
-// console.log(data.search);
 // title
 // urlToImage
 export { elems, icons };

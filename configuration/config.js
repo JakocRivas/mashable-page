@@ -18,7 +18,6 @@ export default class Search {
       );
 
       this.results = await Object.values(res.data.articles);
-      // console.log(this.results);
       return this.results;
     } catch (error) {
       alert(`wrong api key error: ${error}`);

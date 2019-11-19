@@ -4,7 +4,21 @@ import * as menuView from "./views/menuView";
 import * as navMenus from "../utils/navMenus";
 
 const state = {};
-
+function addDisplayOnHover() {
+  const elementContained = document.querySelectorAll(".article");
+  let clickedElement;
+  Array.from(elementContained).forEach(async elem => {
+    elem.addEventListener("mouseover", function() {
+      const id = elem.getAttribute("class").split(" ");
+      if (clickedElement) {
+        clickedElement.classList.remove("hidden");
+      }
+      const hoveredElement = document.querySelector(`div.${id[1]}`);
+      clickedElement = hoveredElement;
+      document.querySelector(`div.${id[1]}`).classList.toggle("hidden");
+    });
+  });
+}
 const controlMenu = async () => {
   if (!state.menu) state.menu = new Menu();
   // console.log(await navMenus.elems);
@@ -17,35 +31,21 @@ const controlMenu = async () => {
   );
   console.log(elems);
   elems.forEach(async elem => {
-    await state.menu.addMenu(elem);
+    state.menu.addMenu(elem);
   });
 
   const { icons } = navMenus;
 
   icons.forEach(elem => state.menu.addMenu(elem));
 
-  state.menu.menus.forEach(async menu => {
-    await menuView.renderMenus(menu);
+  state.menu.menus.forEach(menu => {
+    menuView.renderMenus(menu);
   });
   state.menu.more.forEach(menu => {
     menuView.renderSocial(menu);
   });
+  addDisplayOnHover();
 };
-
-const elementContained = document.querySelectorAll(".article");
-let clickedElement;
-
-Array.from(elementContained).forEach(async elem => {
-  elem.addEventListener("mouseover", function() {
-    const id = elem.getAttribute("class").split(" ");
-    if (clickedElement) {
-      clickedElement.classList.remove("hidden");
-    }
-    const hoveredElement = document.querySelector(`div.${id[1]}`);
-    clickedElement = hoveredElement;
-    document.querySelector(`div.${id[1]}`).classList.toggle("hidden");
-  });
-});
 
 controlMenu();
 /* HAMBURGER CONTROLLER */
