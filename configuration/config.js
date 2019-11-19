@@ -11,16 +11,21 @@ export default class Search {
     this.country = country;
   }
 
-  async getResults() {
+  async getResults(query) {
     try {
       const res = await axios(
-        `https://newsapi.org/v2/top-headlines?country=${this.country}&apiKey=${key}`
+        `https://newsapi.org/v2/everything?q=${query}&apiKey=${key}`
       );
+
       this.results = await Object.values(res.data.articles);
+      // console.log(this.results);
       return this.results;
     } catch (error) {
       alert(`wrong api key error: ${error}`);
     }
-    // return this.results.json;
   }
 }
+
+// const res = await axios(
+//   `https://newsapi.org/v2/top-headlines?country=${this.country}&apiKey=${key}`
+// );

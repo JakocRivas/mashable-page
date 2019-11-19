@@ -5,11 +5,13 @@ import * as navMenus from "../utils/navMenus";
 
 const state = {};
 
-const controlMenu = () => {
+const controlMenu = async () => {
   if (!state.menu) state.menu = new Menu();
+  // console.log(await navMenus.elems);
 
-  const { elems } = navMenus;
-  elems.forEach(elem => state.menu.addMenu(elem));
+  const elems = await navMenus.elems;
+  elems.map(async elem => console.log(await elem));
+  elems.map(async elem => state.menu.addMenu(await elem));
 
   const { icons } = navMenus;
 

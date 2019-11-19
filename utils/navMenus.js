@@ -1,6 +1,6 @@
 import Search from "../configuration/config";
 
-const elems = [
+const elesms = [
   {
     name: "VIDEO"
   },
@@ -182,30 +182,57 @@ const data = {};
 
 const searchControl = async () => {
   data.search = new Search("us");
+  const menuNames = [
+    "ENTERTAINMENT",
+    "CULTURE",
+    "TECH",
+    "SCIENCE",
+    "SOCIAL GOOD"
+  ];
+  const countries = ["kr", "gb", "us", "ve", "pl"];
 
   try {
-    await data.search.getResults();
+    // await data.search.getResults();
     // console.log(data.search.results[0].title);
+    // const template = [
+    //   {
+    //     name: "",
+    //     subMenu: [{ title: "", subArticles: [] }]
+    //   }
+    // ];
+    const values = menuNames.map(async (menu, index) => {
+      // console.log(menu);
+      const dataArticles = await data.search.getResults(menu[index]);
+      console.log(`this is article`, dataArticles);
+      return {
+        name: menu,
+        subMenu: [
+          {
+            title: `menu${index}`,
+            subArticles: dataArticles.map(elem => {
+              // console.log(elem);
+              return elem.title;
+            })
+          }
+        ]
+      };
+    });
+    // console.log(await values);
+    return await values;
 
-    if (data.search.results) {
-      elems.forEach(elem => {
-        if (elem.subMenu !== undefined && elem.type === "subMenu") {
-          elem.subMenu.forEach((unused, index) => {
-            elem.subMenu[index].title = data.search.results[index].title;
-          });
-          console.log(elem.subMenu);
-          // console.log(elem);
-          // console.log(data.search.results[index].title);
-        }
-      });
-    }
+    // if (data.search.results) {
+    //   const menus = data.search.results.map(elem => {
+    //     return {
+    //       title: elem.title
+    //     };
+    //   });
+    // }
   } catch (error) {
     console.error(`there seems to be a problem fetching the data ${error}`);
   }
 };
 
-searchControl();
-console.log(elems);
+const elems = searchControl();
 // console.log(data.search);
 // title
 // urlToImage
