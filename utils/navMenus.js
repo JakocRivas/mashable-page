@@ -18,7 +18,7 @@ async function createSubMenu(numberOfSubmenus, arrayOfSubMenus, query) {
   for (let index = 0; index < numberOfSubmenus; index += 1) {
     const subArticle = {
       title: arrayOfSubMenus[index],
-      subArticles: Promise.all(
+      subArticles: await Promise.all(
         query.slice(current, next).map(elem => {
           return elem.title;
         })
@@ -61,7 +61,6 @@ const searchControl = async () => {
     console.error(`there seems to be a problem fetching the data ${error}`);
   }
 };
-
 const elems = searchControl();
 // title
 // urlToImage
