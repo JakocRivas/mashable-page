@@ -9,16 +9,23 @@ const controlMenu = async () => {
   if (!state.menu) state.menu = new Menu();
   // console.log(await navMenus.elems);
 
-  const elems = await navMenus.elems;
-  elems.map(async elem => console.log(await elem));
-  elems.map(async elem => state.menu.addMenu(await elem));
+  const elemsData = await navMenus.elems;
+  const elems = await Promise.all(
+    elemsData.map(async elem => {
+      return elem;
+    })
+  );
+  console.log(elems);
+  elems.forEach(async elem => {
+    await state.menu.addMenu(elem);
+  });
 
   const { icons } = navMenus;
 
   icons.forEach(elem => state.menu.addMenu(elem));
 
-  state.menu.menus.forEach(menu => {
-    menuView.renderMenus(menu);
+  state.menu.menus.forEach(async menu => {
+    await menuView.renderMenus(menu);
   });
   state.menu.more.forEach(menu => {
     menuView.renderSocial(menu);
@@ -29,8 +36,8 @@ controlMenu();
 const elementContained = document.querySelectorAll(".article");
 let clickedElement;
 
-Array.from(elementContained).forEach(elem => {
-  elem.addEventListener("mouseover", function() {
+Array.from(elementContained).forEach(async elem => {
+  await elem.addEventListener("mouseover", function() {
     const id = elem.getAttribute("class").split(" ");
     if (clickedElement) {
       clickedElement.classList.remove("hidden");

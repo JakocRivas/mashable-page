@@ -14,14 +14,15 @@ export default class Menu {
       id: ""
     };
 
-    if (this.menus.length < 8 && name.length > 0) {
+    if (this.menus.length < 8 && name.length > 0 && type === "subMenu") {
       this.menus.push(menu);
       return menu;
     }
 
-    if (name.length > 0) {
+    if (name.length > 0 && type === "menu-more") {
       this.more.push(menu);
       return menu;
     }
+    this.more.push(menu);
   }
 }

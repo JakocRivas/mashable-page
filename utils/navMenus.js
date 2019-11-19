@@ -209,12 +209,13 @@ const searchControl = async () => {
         subMenu: [
           {
             title: `menu${index}`,
-            subArticles: dataArticles.map(elem => {
+            subArticles: dataArticles.slice(0, 5).map(elem => {
               // console.log(elem);
               return elem.title;
             })
           }
-        ]
+        ],
+        type: "subMenu"
       };
     });
     // console.log(await values);
