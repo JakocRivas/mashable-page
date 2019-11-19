@@ -20,7 +20,7 @@ async function createSubMenu(numberOfSubmenus, arrayOfSubMenus, query) {
       title: arrayOfSubMenus[index],
       subArticles: await Promise.all(
         query.slice(current, next).map(elem => {
-          return elem.title;
+          return { title: elem.title, url: elem.urlToImage };
         })
       )
     };
@@ -28,7 +28,7 @@ async function createSubMenu(numberOfSubmenus, arrayOfSubMenus, query) {
     current += 5;
     next += 5;
   }
-  // console.log("array of each submenu", subArticlesArray);
+  console.log("array of each submenu", subArticlesArray);
   return subArticlesArray;
 }
 

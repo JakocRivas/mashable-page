@@ -1,8 +1,17 @@
 // This function is to create the html snippet for all the li articles in each sub menu
 export const articleLiMarkUp = function(subMenuLI) {
+  let img = "";
+  if (subMenuLI.url) {
+    const alt = subMenuLI.title.slice(0, 10);
+    img = `<img src="${subMenuLI.url}" alt="${alt} class="article-img">`;
+  } else {
+    img = "<p>no image</p>";
+  }
   return `
         <li class="menu__more-sub-article">
-            <a class="title-label">${subMenuLI}</a>
+          
+            ${img}
+            <a class="title-label">${subMenuLI.title}</a>
         </li>
         `;
 };

@@ -297,7 +297,17 @@ ul {
 }
 
 .menu__more-sub-article {
+  /* display: flex; */
+  /* position: inherit; */
+  /* width: inherit; */
+  /* height: inherit; */
   color: #00aeef;
+}
+li.menu__more-sub-article img {
+  /* display: none; */
+  width: 200px;
+  height: 115px;
+  margin-bottom: 12px;
 }
 
 .title-label {
