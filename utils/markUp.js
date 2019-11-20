@@ -69,7 +69,7 @@ export const navBarMenuMarkUp = function(
                 ${
                   subMenu.length > 0
                     ? type !== "menu-more"
-                      ? `<div class='submenu-container'><div><ul class='${className}'>${menu}</ul></div><div class="sub-articles-container">${subArticle}</div></div>`
+                      ? `<div class='submenu-container'><div class="subArticles-sibling"><ul class='${className}'>${menu}</ul></div><div class="sub-articles-container">${subArticle}</div></div>`
                       : `<div class='submenu-container'><ul class='${className}'>${column}</ul></div>`
                     : ""
                 }
