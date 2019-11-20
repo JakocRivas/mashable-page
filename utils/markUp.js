@@ -14,7 +14,7 @@ export const articleLiMarkUp = function(subMenuLI) {
   } else {
     img = "<p>no image</p>";
   }
-  console.log(typeof subMenuLI === "string");
+  // console.log(typeof subMenuLI === "string");
   return `
         <li class="menu__subMenu-sub-article">
           

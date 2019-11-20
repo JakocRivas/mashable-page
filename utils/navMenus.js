@@ -11,15 +11,21 @@ const icons = [
 
 const data = {};
 
-async function createSubMenu(numberOfSubmenus, arrayOfSubMenus, query) {
+async function createSubMenu(
+  numberOfSubmenus,
+  arrayOfSubMenus,
+  query,
+  current,
+  next
+) {
   const subArticlesArray = [];
-  let current = 0;
-  let next = 5;
+
   for (let index = 0; index < numberOfSubmenus; index += 1) {
+    const searchResults = await query.getResults(arrayOfSubMenus[index]);
     const subArticle = {
       title: arrayOfSubMenus[index],
       subArticles: await Promise.all(
-        query.slice(current, next).map(elem => {
+        searchResults.slice(current, next).map(elem => {
           return { title: elem.title, url: elem.urlToImage };
         })
       )
@@ -28,7 +34,6 @@ async function createSubMenu(numberOfSubmenus, arrayOfSubMenus, query) {
     current += 5;
     next += 5;
   }
-  console.log("array of each submenu", subArticlesArray);
   return subArticlesArray;
 }
 const menuMore = [
@@ -149,6 +154,8 @@ const menuMore = [
 
 const searchControl = async () => {
   data.search = new Search("us");
+  const current = 0;
+  const next = 5;
   const menuNames = [
     { name: "MOVIES" },
     { name: "ENTERTAINMENT", subMenus: ["gaming", "movies"], type: "subMenu" },
@@ -162,31 +169,29 @@ const searchControl = async () => {
   try {
     const values = allMenus.map(async (menu, index) => {
       if (menu.type === "subMenu") {
-        // console.log(menu);
-        const dataArticles = await data.search.getResults(
-          `${menu[index]} ${menu.subMenus[index]}`
-        );
-        // console.log(`this is article`, dataArticles);
+        const dataArticles = await data.search.getResults(`apps}`);
         return {
           name: menu.name,
-          subMenu: await createSubMenu(2, menu.subMenus, dataArticles),
+          subMenu: await createSubMenu(
+            menu.subMenus.length,
+            menu.subMenus,
+            data.search,
+            current,
+            next
+          ),
           type: menu.type
         };
       }
-      console.log("this menu doesnt have a type", menu);
       if (menu.type === "menu-more") {
         return menu;
       }
       return menu;
     });
-    console.log("this are the menu objects", await values);
     return await values;
   } catch (error) {
     console.error(`there seems to be a problem fetching the data ${error}`);
   }
 };
 const elems = searchControl();
-console.log(elems);
-// title
-// urlToImage
+
 export { elems, icons };
