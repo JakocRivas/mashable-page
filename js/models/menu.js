@@ -20,7 +20,7 @@ export default class Menu {
     }
 
     if (name.length > 0 && type === "menu-more") {
-      this.more.push(menu);
+      this.menus.push(menu);
       return menu;
     }
     this.more.push(menu);
