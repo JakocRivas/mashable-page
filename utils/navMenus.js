@@ -12,7 +12,7 @@ const icons = [
 const data = {};
 
 async function createSubMenu(
-  numberOfSubmenus,
+  numberOfSubMenus,
   arrayOfSubMenus,
   query,
   current,
@@ -20,13 +20,19 @@ async function createSubMenu(
 ) {
   const subArticlesArray = [];
 
-  for (let index = 0; index < numberOfSubmenus; index += 1) {
+  for (let index = 0; index < numberOfSubMenus; index += 1) {
     const searchResults = await query.getResults(arrayOfSubMenus[index]);
     const subArticle = {
       title: arrayOfSubMenus[index],
       subArticles: await Promise.all(
         searchResults.slice(current, next).map(elem => {
-          return { title: elem.title, url: elem.urlToImage };
+          return {
+            title: elem.title,
+            url: elem.urlToImage,
+            source: elem.source,
+            author: elem.author,
+            link: elem.url
+          };
         })
       )
     };
@@ -167,9 +173,8 @@ const searchControl = async () => {
   const allMenus = menuNames.concat(menuMore);
 
   try {
-    const values = allMenus.map(async (menu, index) => {
+    const values = allMenus.map(async menu => {
       if (menu.type === "subMenu") {
-        const dataArticles = await data.search.getResults(`apps}`);
         return {
           name: menu.name,
           subMenu: await createSubMenu(

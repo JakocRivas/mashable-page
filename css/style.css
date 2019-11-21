@@ -18,6 +18,10 @@
 ul {
   list-style-type: none;
 }
+.menu__subMenu-sub-article a {
+  text-decoration: none;
+  color: #00aeef;
+}
 
 /* adds padding to the li elements */
 .title-menu,

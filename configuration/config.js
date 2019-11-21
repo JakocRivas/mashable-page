@@ -3,7 +3,8 @@ import "@babel/polyfill";
 import axios from "axios";
 
 // const proxy = "https://cors-anywhere.herokuapp.com/";
-const key = "7cf0171f9a004bd386992a39ec8f8fd6";
+// const key = "7cf0171f9a004bd386992a39ec8f8fd6";
+const key = "9325639d44f94e168a54898f6243b3d3";
 // const country = "us";
 
 export default class Search {

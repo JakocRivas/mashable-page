@@ -1,9 +1,12 @@
+import lozad from "lozad";
+
 import Menu from "./models/menu";
 import * as menuView from "./views/menuView";
 
 import * as navMenus from "../utils/navMenus";
 
 const state = {};
+
 function addDisplayOnHover() {
   const elementContained = document.querySelectorAll(".article");
   let clickedElement;
@@ -29,7 +32,6 @@ const controlMenu = async () => {
       return elem;
     })
   );
-  console.log(elems);
   elems.forEach(async elem => {
     state.menu.addMenu(elem);
   });
@@ -45,8 +47,17 @@ const controlMenu = async () => {
     menuView.renderSocial(menu);
   });
   addDisplayOnHover();
+  const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+  observer.observe();
+  [].forEach.call(document.querySelectorAll("img"), el => {
+    el.onerror = () => {
+      if (el.getAttribute("src") !== "../img/lazy_pixel.jpg") {
+        el.src =
+          "https://us.123rf.com/450wm/pavelstasevich/pavelstasevich1811/pavelstasevich181101065/112815953-stock-vector-no-image-available-icon-flat-vector.jpg?ver=6";
+      }
+    };
+  });
 };
-
 controlMenu();
 /* HAMBURGER CONTROLLER */
 const navSlide = () => {

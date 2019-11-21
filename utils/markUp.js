@@ -7,10 +7,13 @@ export const articleLiMarkUp = function(subMenuLI) {
     </li>
     `;
   }
-  let img = "";
+
+  let img = subMenuLI.url;
+  const defaultImg = "./img/lazy_pixel.jpg";
+
   if (subMenuLI.url) {
-    const alt = subMenuLI.title.slice(0, 10);
-    img = `<img src="${subMenuLI.url}" alt="${alt} class="article-img">`;
+    const alt = subMenuLI.source.name;
+    img = `<img class="article-img lozad" src="${defaultImg}" data-src="${img}" alt="${alt}">`;
   } else {
     img = "<p>no image</p>";
   }
@@ -19,7 +22,7 @@ export const articleLiMarkUp = function(subMenuLI) {
         <li class="menu__subMenu-sub-article">
           
             ${img}
-            <a class="title-label">${subMenuLI.title}</a>
+            <a href="${subMenuLI.link}" class="title-label">${subMenuLI.title}</a>
         </li>
         `;
 };
