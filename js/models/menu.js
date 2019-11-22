@@ -1,5 +1,3 @@
-// var uniqid = require("uniqid");
-
 export default class Menu {
   constructor() {
     this.menus = [];

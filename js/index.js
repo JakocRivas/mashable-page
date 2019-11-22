@@ -25,7 +25,6 @@ function addDisplayOnHover() {
 }
 const controlMenu = async () => {
   if (!state.menu) state.menu = new Menu();
-  // console.log(await navMenus.elems);
 
   const elemsData = await navMenus.elems;
   const elems = await Promise.all(
