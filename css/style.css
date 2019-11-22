@@ -52,7 +52,7 @@ ul {
   margin-right: 20px;
   cursor: pointer;
 }
-#icon a img {
+.header #icon a img {
   width: 131px;
 }
 
@@ -87,6 +87,7 @@ ul {
 }
 /* puts the li elements on the menu class side by side */
 .menu {
+  display: flex;
   justify-content: flex-start;
 }
 
@@ -146,12 +147,14 @@ ul {
   }
 
   .header {
-    position: fixed;
+    position: inherit;
+    padding-left: 50px;
   }
   #icon {
     display: block;
     position: inherit;
     top: 0;
+    /* bottom: 0; */
   }
   .menu-links {
     position: absolute;
@@ -176,6 +179,9 @@ ul {
     opacity: 0;
     color: white;
     transition: transform 0.5s ease-in;
+  }
+  .menu-links .title-menu:hover .title-name {
+    color: #00aeef;
   }
 }
 
