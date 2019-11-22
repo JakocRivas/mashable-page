@@ -163,7 +163,7 @@ const searchControl = async () => {
   const current = 0;
   const next = 5;
   const menuNames = [
-    { name: "MOVIES" },
+    { name: "MOVIES", type: "no-menu" },
     { name: "ENTERTAINMENT", subMenus: ["gaming", "movies"], type: "subMenu" },
     { name: "CULTURE", subMenus: ["memes", "celebrities"], type: "subMenu" },
     { name: "TECH", subMenus: ["Business", "apps"], type: "subMenu" },

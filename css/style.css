@@ -172,7 +172,7 @@ ul {
     position: relative;
     right: calc(60%);
   }
-  .menu-links li:not(:first-child) {
+  .menu-links .title-menu:not(:first-child) {
     opacity: 0;
     color: white;
     transition: transform 0.5s ease-in;

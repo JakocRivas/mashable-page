@@ -14,7 +14,10 @@ export default class Menu {
       id: ""
     };
 
-    if (this.menus.length < 8 && name.length > 0 && type === "subMenu") {
+    if (
+      (this.menus.length < 8 && name.length > 0 && type === "subMenu") ||
+      type === "no-menu"
+    ) {
       this.menus.push(menu);
       return menu;
     }

@@ -1,4 +1,5 @@
 import lozad from "lozad";
+import checkElement from "../utils/dom";
 
 import Menu from "./models/menu";
 import * as menuView from "./views/menuView";
@@ -58,12 +59,16 @@ const controlMenu = async () => {
     };
   });
 };
-controlMenu();
+
 /* HAMBURGER CONTROLLER */
-const navSlide = () => {
+const navSlide = async () => {
   const burger = document.querySelector(".hamburger");
   const nav = document.querySelector(".menu-links");
-  const navLinks = document.querySelectorAll(".title-menu");
+  const navLinks = await checkElement(".title-menu:not(:first-child)");
+
+  console.log(burger);
+  console.log(nav);
+  console.log(navLinks);
 
   // Toggle nav
   burger.addEventListener("click", () => {
@@ -71,15 +76,24 @@ const navSlide = () => {
 
     // Animate links
     navLinks.forEach((link, index) => {
+      console.log(link);
       if (link.style.animation) {
         link.style.animation = "";
       } else {
         link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 +
           1.5}s`;
       }
+      console.log(link.style.animation);
     });
+
     // Burger animation
     burger.classList.toggle("toggle");
   });
 };
-navSlide();
+
+async function init() {
+  await controlMenu();
+  await navSlide();
+}
+
+init();
