@@ -25,4 +25,4 @@ If you're unsure about any of these, don't hesitate to ask. We're here to help!
 
 - [ ] My code follows the JSdoc format standard to document the code
 - [ ] Each class and method has the correct documentation accordingly.
-- [ ] The "how to test" section is well and thoughtfully self explanatory.
+- [ ] The "how to test" section is well and thoughtfully self-explanatory.
