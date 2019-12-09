@@ -2,17 +2,29 @@ import "@babel/polyfill";
 
 import axios from "axios";
 
-// const key = "7cf0171f9a004bd386992a39ec8f8fd6";
-const key = "9325639d44f94e168a54898f6243b3d3";
+/**
+ * @export
+ * @class Search Class that contains the logic to handle the fetch of the news api
+ */
 export default class Search {
-  constructor(country) {
-    this.country = country;
+  /**
+   *
+   * @param {string} key A parameter tha contains the key of the api
+   */
+  constructor(key) {
+    this.key = key;
   }
 
+  /**
+   *
+   * @param {string} query A parameter query that will be used to search different types of articles for each menu
+   * @return {promise<object{}>} A resolved json with the articles that match the query parameter.
+   * @memberof Search
+   */
   async getResults(query) {
     try {
       const res = await axios(
-        `https://newsapi.org/v2/everything?q=${query}&apiKey=${key}`
+        `https://newsapi.org/v2/everything?q=${query}&apiKey=${this.key}`
       );
 
       this.results = await Object.values(res.data.articles);

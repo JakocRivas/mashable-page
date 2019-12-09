@@ -1,5 +1,7 @@
 import Search from "../configuration/config";
 
+import key from "../credentials";
+
 import { menuMore, icons, menus } from "./menuObjects";
 
 const data = {};
@@ -37,7 +39,7 @@ async function createSubMenu(
 }
 
 const searchControl = async () => {
-  data.search = new Search("us");
+  data.search = new Search(key.firstKey);
   const current = 0;
   const next = 5;
   const menuNames = menus;
