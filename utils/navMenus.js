@@ -6,12 +6,23 @@ import { menuMore, icons, menus } from "./menuObjects";
 
 const data = {};
 
+/**
+ * Creates an object for each sub-menu that contains a title property and a subArticles property that contains an object that will generate a number of subArticles for each sub-menu, this number being 5.
+ *
+ *
+ * @param {int} numberOfSubMenus Takes the length of the array of the sub menus to now how many sub menus are.
+ * @param {array} arrayOfSubMenus An array for all the menus of the navbar
+ * @param {string} query A string that will be used to search the articles for each submenu.
+ * @param {int} current Controls the number of sub-menus that each menu should have(5)
+ * @param {int} next Controls the number of sub-menus that each menu should have(5)
+ * @returns {Array} An array of all the subMenus and Articles that have each sub-menu
+ */
 async function createSubMenu(
   numberOfSubMenus,
   arrayOfSubMenus,
   query,
-  current,
-  next
+  current = 0,
+  next = 5
 ) {
   const subArticlesArray = [];
 
@@ -38,6 +49,9 @@ async function createSubMenu(
   return subArticlesArray;
 }
 
+/**
+ * Takes the menus with type menu and type more concat them in a list creates and object and fill them with the createSubMenu function with the data that it fetch from the news api
+ */
 const searchControl = async () => {
   data.search = new Search(key.firstKey);
   const current = 0;
