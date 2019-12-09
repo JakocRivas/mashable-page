@@ -27,7 +27,7 @@ export default class Search {
         `https://newsapi.org/v2/everything?q=${query}&apiKey=${this.key}`
       );
 
-      this.results = await Object.values(res.data.articles);
+      this.results = Object.values(res.data.articles);
       return this.results;
     } catch (error) {
       alert(`wrong api key error: ${error}`);
