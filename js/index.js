@@ -11,7 +11,7 @@ const state = {};
 function addDisplayOnHover() {
   const elementContained = document.querySelectorAll(".article");
   let clickedElement;
-  Array.from(elementContained).forEach(async elem => {
+  [...elementContained].forEach(async elem => {
     elem.addEventListener("mouseover", function() {
       const id = elem.getAttribute("class").split(" ");
       if (clickedElement) {
