@@ -65,7 +65,7 @@ const searchControl = async () => {
       }
       return menu;
     });
-    return await values;
+    return values;
   } catch (error) {
     console.error(`there seems to be a problem fetching the data ${error}`);
   }
