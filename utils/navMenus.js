@@ -7,7 +7,8 @@ import { menuMore, icons, menus } from "./menuObjects";
 const data = {};
 
 /**
- * Creates an object for each sub-menu that contains a title property and a subArticles property that contains an object that will generate a number of subArticles for each sub-menu, this number being 5.
+ * Creates an object for each sub-menu that contains a title property and a subArticles property
+ * that contains an object that will generate a number of subArticles for each sub-menu, this number being 5.
  *
  *
  * @param {int} numberOfSubMenus Takes the length of the array of the sub menus to now how many sub menus are.
@@ -50,7 +51,7 @@ async function createSubMenu(
 }
 
 /**
- * Takes the menus with type menu and type more concat them in a list creates and object and fill them with the createSubMenu function with the data that it fetch from the news api
+ * Takes the menus with type menu and type more concat them in a list creates and object and fill them with the createSubMenu function with the data that it fetches from the news api
  */
 const searchControl = async () => {
   data.search = new Search(key.firstKey);
