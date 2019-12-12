@@ -3,7 +3,7 @@ const noStyle = "no-style";
 export const articleLiMarkUp = function(subMenuLI) {
   if (typeof subMenuLI === "string") {
     return `
-          <li class="menu__more-sub-article">
+          <li class="menu-more-sub-article">
               <a class="title-label">${subMenuLI}</a>
           </li>
           `;
@@ -31,7 +31,7 @@ export const articleLiMarkUp = function(subMenuLI) {
 // This is to create the html snippet of all the ul elements inside the sub menus with the type of more
 export const columnMarkUp = function(element, article) {
   return ` 
-        <ul class="menu__more-articles ${noStyle}">
+        <ul class="menu-more-articles ${noStyle}">
             <li class="title-menu-more">${element.title}</li>${article}
         </ul>
         `;
