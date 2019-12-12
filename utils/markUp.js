@@ -20,7 +20,7 @@ export const articleLiMarkUp = function(subMenuLI) {
   }
   // console.log(typeof subMenuLI === "string");
   return `
-        <li class="menu__subMenu-sub-article">
+        <li class="menu-subMenu-sub-article">
           
             ${img}
             <a href="${subMenuLI.link}" class="title-label">${subMenuLI.title}</a>
