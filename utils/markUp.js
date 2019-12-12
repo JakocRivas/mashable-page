@@ -3,10 +3,10 @@ const noStyle = "no-style";
 export const articleLiMarkUp = function(subMenuLI) {
   if (typeof subMenuLI === "string") {
     return `
-    <li class="menu__more-sub-article">
-        <a class="title-label">${subMenuLI}</a>
-    </li>
-    `;
+          <li class="menu__more-sub-article">
+              <a class="title-label">${subMenuLI}</a>
+          </li>
+          `;
   }
 
   let img = subMenuLI.url;
@@ -31,9 +31,9 @@ export const articleLiMarkUp = function(subMenuLI) {
 // This is to create the html snippet of all the ul elements inside the sub menus with the type of more
 export const columnMarkUp = function(element, article) {
   return ` 
-            <ul class="menu__more-articles ${noStyle}">
-                <li class="title-menu-more">${element.title}</li>${article}
-            </ul>
+        <ul class="menu__more-articles ${noStyle}">
+            <li class="title-menu-more">${element.title}</li>${article}
+        </ul>
         `;
 };
 
@@ -43,7 +43,7 @@ export const subArticleMarkUp = function(ID, article) {
         <div class="subArticles ${ID}">
             <ul class="article-post ${noStyle}">${article}</ul>
         </div>
-    `;
+        `;
 };
 
 // This is for the menus of the left side of the nav bar with the class menu
@@ -52,7 +52,7 @@ export const menuMarkUp = function(id, elem) {
         <li class="article ${id}">
             <a class="article-font">${elem.title}</a>
         </li>
-    `;
+        `;
 };
 
 // This is for the menus of the left side of the nav bar with the class social
