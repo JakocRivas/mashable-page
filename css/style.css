@@ -57,7 +57,7 @@
   cursor: pointer;
 }
 
-.header #icon a img {
+.icon-header #icon a img {
   width: 131px;
 }
 
@@ -156,7 +156,7 @@
     display: none;
   }
 
-  .header {
+  .icon-header {
     position: inherit;
     padding-left: 50px;
   }
