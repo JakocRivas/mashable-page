@@ -22,13 +22,17 @@ function addDisplayOnHover() {
   let clickedElement;
   [...elementContained].forEach(async elem => {
     elem.addEventListener("mouseover", function() {
-      const id = elem.getAttribute("class").split(" ");
+      const dynamicClassName = elem.getAttribute("class").split(" ");
       if (clickedElement) {
         clickedElement.classList.remove("hidden");
       }
-      const hoveredElement = document.querySelector(`div.${id[1]}`);
+      const hoveredElement = document.querySelector(
+        `div.${dynamicClassName[1]}`
+      );
       clickedElement = hoveredElement;
-      document.querySelector(`div.${id[1]}`).classList.toggle("hidden");
+      document
+        .querySelector(`div.${dynamicClassName[1]}`)
+        .classList.toggle("hidden");
     });
   });
 }
