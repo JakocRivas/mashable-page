@@ -7,7 +7,10 @@
  */
 const constants = {
   maxNumberOfMenus: 8,
-  nameWithLengthZero: 0
+  nameWithLengthZero: 0,
+  subMenuTypeGeneral: "subMenu",
+  subMenuTypeMore: "menu-more",
+  noType: "no-menu"
 };
 /**
  *
@@ -39,14 +42,14 @@ export default class Menu {
     if (
       (this.menus.length < constants.maxNumberOfMenus &&
         name.length > constants.nameWithLengthZero &&
-        type === "subMenu") ||
-      type === "no-menu"
+        type === constants.subMenuTypeGeneral) ||
+      type === constants.noType
     ) {
       this.menus.push(menu);
       return menu;
     }
 
-    if (name.length > 0 && type === "menu-more") {
+    if (name.length > 0 && type === constants.subMenuTypeMore) {
       this.menus.push(menu);
       return menu;
     }
