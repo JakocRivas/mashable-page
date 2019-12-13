@@ -214,15 +214,15 @@
   }
 }
 
-.toggle .line1 {
+.toggle .hamburger-first {
   transform: rotate(-45deg) translate(-5px, 6px);
 }
 
-.toggle .line2 {
+.toggle .hamburger-middle {
   opacity: 0;
 }
 
-.toggle .line3 {
+.toggle .hamburger-last {
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
