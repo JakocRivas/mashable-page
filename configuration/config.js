@@ -29,7 +29,7 @@ export default class Search {
 
       return Object.values(res.data.articles);
     } catch (error) {
-      alert(`wrong api key error: ${error}`);
+      console.error(`wrong api key error: ${error}`);
     }
   }
 }
