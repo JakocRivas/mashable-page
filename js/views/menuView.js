@@ -41,7 +41,7 @@ const createMenu = ({ name, subMenu, type, id }) => {
     });
     return map.join().replace(/,/g, "");
   }
-  // check the type of the menu and creates the html snippet og the subMenus and subArticles and creates the id for each one
+  // check the type of the menu and creates the html snippet of the subMenus and subArticles and creates the id for each one
   if (type === "menu-more") {
     subMenu.forEach(element => {
       const newID = uniqid();
