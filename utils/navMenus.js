@@ -54,7 +54,7 @@ async function createSubMenu(
  * Takes the menus with type menu and type more concat them in a list creates and object and fill them with the createSubMenu function with the data that it fetches from the news api
  */
 const searchControl = async () => {
-  data.search = new Search(key.firstKey);
+  data.search = new Search(key.NEWS_API_KEY);
   const current = 0;
   const next = 5;
   const menuNames = menus;
