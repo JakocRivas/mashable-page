@@ -22,8 +22,8 @@ async function createSubMenu(
   numberOfSubMenus,
   arrayOfSubMenus,
   query,
-  current = 0,
-  next = 5
+  minNumberOfSubArticles = 0,
+  maxNumberOfSubArticles = 5
 ) {
   const subArticlesArray = [];
 
@@ -32,20 +32,22 @@ async function createSubMenu(
     const subArticle = {
       title: arrayOfSubMenus[index],
       subArticles: await Promise.all(
-        searchResults.slice(current, next).map(elem => {
-          return {
-            title: elem.title,
-            url: elem.urlToImage,
-            source: elem.source,
-            author: elem.author,
-            link: elem.url
-          };
-        })
+        searchResults
+          .slice(minNumberOfSubArticles, maxNumberOfSubArticles)
+          .map(elem => {
+            return {
+              title: elem.title,
+              url: elem.urlToImage,
+              source: elem.source,
+              author: elem.author,
+              link: elem.url
+            };
+          })
       )
     };
     subArticlesArray.push(subArticle);
-    current += 5;
-    next += 5;
+    minNumberOfSubArticles += 5;
+    maxNumberOfSubArticles += 5;
   }
   return subArticlesArray;
 }
