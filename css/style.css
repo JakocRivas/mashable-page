@@ -43,7 +43,7 @@
 .title-name {
   font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 
 .title-menu li:hover,
