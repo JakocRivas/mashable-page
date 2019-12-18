@@ -41,7 +41,7 @@ export default class Menu {
 
     if (
       (this.menus.length < constants.maxNumberOfMenus &&
-        name.length > constants.nameWithLengthZero &&
+        name.length &&
         type === constants.subMenuTypeGeneral) ||
       type === constants.noType
     ) {
