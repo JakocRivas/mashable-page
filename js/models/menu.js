@@ -20,7 +20,7 @@ const constants = {
 export default class Menu {
   constructor() {
     this.menus = [];
-    this.more = [];
+    this.icons = [];
   }
 
   /**
@@ -50,7 +50,7 @@ export default class Menu {
       return menu;
     }
 
-    this.more.push(menu);
+    this.icons.push(menu);
     return menu;
   }
 }

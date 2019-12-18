@@ -58,7 +58,7 @@ const controlMenu = async () => {
     menuView.renderMenus(menu);
   });
   // Render all the menus of the state with type "menu-more".
-  state.menu.more.forEach(menu => {
+  state.menu.icons.forEach(menu => {
     menuView.renderSocial(menu);
   });
   addDisplayOnHover();
