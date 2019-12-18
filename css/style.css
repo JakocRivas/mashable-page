@@ -1,3 +1,8 @@
+:root {
+  --deep-sky-blue: #00aeef;
+  --pattens-blue: #ddf0f9;
+  --pacific-blue: #0698dd;
+}
 * {
   margin: 0px;
   padding: 0px;
@@ -9,7 +14,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #00aeef;
+  background-color: var(--deep-sky-blue);
   width: 100vw;
   position: fixed; /* Make it stick, even on scroll */
 }
@@ -21,7 +26,7 @@
 
 .menu-subMenu-sub-article a {
   text-decoration: none;
-  color: #00aeef;
+  color: var(--deep-sky-blue);
 }
 
 /* adds padding to the li elements */
@@ -72,7 +77,7 @@
 }
 
 #icon:hover {
-  background-color: #ddf0f9;
+  background-color: var(--pattens-blue);
 }
 
 #icon:hover > a .light {
@@ -86,8 +91,8 @@
 /* change the color of the li elements when the mouse is on hover */
 .title-menu:hover,
 .title-social:hover {
-  background-color: #ddf0f9;
-  color: #00aeef;
+  background-color: var(--pattens-blue);
+  color: var(--deep-sky-blue);
 }
 
 /* puts the li elements on the social class side by side */
@@ -195,7 +200,7 @@
   }
 
   .menu-links .title-menu:hover .title-name {
-    color: #00aeef;
+    color: var(--deep-sky-blue);
   }
 }
 
@@ -230,13 +235,13 @@
 
 .submenu-container {
   position: fixed;
-  background: #ddf0f9;
+  background: var(--pattens-blue);
   width: 100%;
   left: 0;
   margin-top: 5px;
   display: none;
   height: auto;
-  border-bottom: 5px solid #00aeef;
+  border-bottom: 5px solid var(--deep-sky-blue);
 }
 
 .submenu {
@@ -261,7 +266,7 @@
   text-align: right;
   margin-right: 20px;
   text-decoration: none;
-  color: #0698dd;
+  color: var(--pacific-blue);
   font-size: 1.1rem;
   font-weight: 900;
 }
@@ -274,8 +279,8 @@
 }
 
 .article:hover {
-  background-color: #ddf0f9;
-  color: #0698dd;
+  background-color: var(--pattens-blue);
+  color: var(--pacific-blue);
 }
 
 .sub-articles-container {
@@ -288,7 +293,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background-color: #ddf0f9;
+  background-color: var(--pattens-blue);
   width: 80vw;
   height: 100%;
   padding-top: 20px;
@@ -338,11 +343,11 @@
   display: flex;
   flex-direction: column;
   width: 20%;
-  color: #00aeef;
+  color: var(--deep-sky-blue);
 }
 
 .menu-more-sub-article {
-  color: #00aeef;
+  color: var(--deep-sky-blue);
 }
 
 li.menu-subMenu-sub-article img {
