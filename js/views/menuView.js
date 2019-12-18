@@ -53,20 +53,18 @@ const createsAndRendersMenuMarkUp = ({ name, subMenu, type }) => {
 
       column += columnMarkUp(menuItem, article);
     });
+  } else {
+    subMenu.forEach(menuItem => {
+      id = uniqid("id-");
+      let article = "";
+
+      if (menuItem.subArticles && menuItem.subArticles.length) {
+        article += createArticleLI(menuItem, id);
+      }
+      subArticle += subArticleMarkUp(id, article);
+      menu += menuMarkUp(id, menuItem);
+    });
   }
-
-  subMenu.forEach(menuItem => {
-    id = uniqid("id-");
-    let article = "";
-
-    if (menuItem.subArticles && menuItem.subArticles.length) {
-      article += createArticleLI(menuItem, id);
-    }
-
-    subArticle += subArticleMarkUp(id, article);
-
-    menu += menuMarkUp(id, menuItem);
-  });
 
   // Returns the html snippet for the navbar
   return navBarMenuMarkUp(
