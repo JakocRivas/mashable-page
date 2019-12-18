@@ -43,15 +43,15 @@ const createsAndRendersMenuMarkUp = ({ name, subMenu, type, id }) => {
   }
   // check the type of the menu and creates the html snippet of the subMenus and subArticles and creates the id for each one
   if (type === "menu-more") {
-    subMenu.forEach(element => {
+    subMenu.forEach(menuItem => {
       const newID = uniqid();
       let article = "";
-      if (element.subArticles && element.subArticles.length > 0) {
+      if (menuItem.subArticles && menuItem.subArticles.length > 0) {
         id = newID;
-        article += createArticleLI(element, id);
+        article += createArticleLI(menuItem, id);
       }
 
-      column += columnMarkUp(element, article);
+      column += columnMarkUp(menuItem, article);
     });
   }
 
