@@ -82,16 +82,12 @@ const createMenu = ({ name, subMenu, type, id }) => {
   );
 };
 
-export const createSocial = ({ name }) => {
-  return navBarSocialMarkUp(name);
-};
-
 export const renderMenus = menu => {
   const markup = createMenu(menu);
   elements.menuContainer.insertAdjacentHTML("beforeend", markup);
 };
 
 export const renderSocial = menu => {
-  const markup = createSocial(menu);
+  const markup = navBarSocialMarkUp(menu.name);
   elements.socialContainer.insertAdjacentHTML("beforeend", markup);
 };
