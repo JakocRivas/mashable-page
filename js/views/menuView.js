@@ -46,7 +46,7 @@ const createsAndRendersMenuMarkUp = ({ name, subMenu, type, id }) => {
     subMenu.forEach(menuItem => {
       const newID = uniqid();
       let article = "";
-      if (menuItem.subArticles && menuItem.subArticles.length > 0) {
+      if (menuItem.subArticles && menuItem.subArticles.length) {
         id = newID;
         article += createArticleLI(menuItem, id);
       }
