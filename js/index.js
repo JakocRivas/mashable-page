@@ -1,9 +1,8 @@
 import lozad from "lozad";
-import checkElement from "../utils/dom";
 
+import checkElement from "../utils/dom";
 import Menu from "./models/menu";
 import * as menuView from "./views/menuView";
-
 import * as navMenus from "../utils/navMenus";
 
 const state = {};
@@ -20,16 +19,13 @@ const state = {};
 function addDisplayOnHover() {
   const elementContained = document.querySelectorAll(".article");
   let clickedElement;
-  [...elementContained].forEach(async elem => {
+  [...elementContained].forEach(elem => {
     elem.addEventListener("mouseover", function() {
       const dynamicClassName = elem.getAttribute("class").split(" ");
       if (clickedElement) {
         clickedElement.classList.remove("hidden");
       }
-      const hoveredElement = document.querySelector(
-        `div.${dynamicClassName[1]}`
-      );
-      clickedElement = hoveredElement;
+      clickedElement = document.querySelector(`div.${dynamicClassName[1]}`);
       document
         .querySelector(`div.${dynamicClassName[1]}`)
         .classList.toggle("hidden");
@@ -45,12 +41,12 @@ const controlMenu = async () => {
 
   // Creates a list of all the menus after waiting for it's subArticles property to resolve.
   const elems = await Promise.all(
-    elemsData.map(async elem => {
+    elemsData.map(elem => {
       return elem;
     })
   );
   // Push each resolve menu element with type "menu" to the state.
-  elems.forEach(async elem => {
+  elems.forEach(elem => {
     state.menu.addMenu(elem);
   });
 
