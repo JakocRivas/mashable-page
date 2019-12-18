@@ -24,7 +24,7 @@ const uniqid = require("uniqid");
  *
  * @returns { string } Returns an html snippet with all the menus that will be inserted in the html.
  */
-const createMenu = ({ name, subMenu, type, id }) => {
+const createsAndRendersMenuMarkUp = ({ name, subMenu, type, id }) => {
   let menu = "";
   const className = type === "menu-more" ? "more" : "submenu";
   let subArticle = "";
@@ -83,7 +83,7 @@ const createMenu = ({ name, subMenu, type, id }) => {
 };
 
 export const renderMenus = menu => {
-  const markup = createMenu(menu);
+  const markup = createsAndRendersMenuMarkUp(menu);
   elements.menuContainer.insertAdjacentHTML("beforeend", markup);
 };
 
