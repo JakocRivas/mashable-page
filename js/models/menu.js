@@ -35,8 +35,7 @@ export default class Menu {
     const menu = {
       name,
       subMenu,
-      type,
-      id: ""
+      type
     };
 
     if (

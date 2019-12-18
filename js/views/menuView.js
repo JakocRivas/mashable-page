@@ -1,3 +1,5 @@
+import uniqid from "uniqid";
+
 import elements from "./base";
 
 /**
@@ -12,8 +14,6 @@ import {
   navBarMenuMarkUp
 } from "../../utils/markUp";
 
-const uniqid = require("uniqid");
-
 /**
  *
  * @param { string } name
@@ -24,11 +24,13 @@ const uniqid = require("uniqid");
  *
  * @returns { string } Returns an html snippet with all the menus that will be inserted in the html.
  */
-const createsAndRendersMenuMarkUp = ({ name, subMenu, type, id }) => {
+const createsAndRendersMenuMarkUp = ({ name, subMenu, type }) => {
   let menu = "";
   const className = type === "menu-more" ? "more" : "submenu";
   let subArticle = "";
   let column = "";
+  // The id needs to be created each loop so every submenu have an id.
+  let id;
 
   /**
    *
@@ -44,10 +46,8 @@ const createsAndRendersMenuMarkUp = ({ name, subMenu, type, id }) => {
   // check the type of the menu and creates the html snippet of the subMenus and subArticles and creates the id for each one
   if (type === "menu-more") {
     subMenu.forEach(menuItem => {
-      const newID = uniqid();
       let article = "";
       if (menuItem.subArticles && menuItem.subArticles.length) {
-        id = newID;
         article += createArticleLI(menuItem, id);
       }
 
@@ -55,18 +55,17 @@ const createsAndRendersMenuMarkUp = ({ name, subMenu, type, id }) => {
     });
   }
 
-  subMenu.forEach(elem => {
-    const newID = uniqid("id-");
+  subMenu.forEach(menuItem => {
+    id = uniqid("id-");
     let article = "";
 
-    if (elem.subArticles && elem.subArticles.length > 0) {
-      id = newID;
-      article += createArticleLI(elem, id);
+    if (menuItem.subArticles && menuItem.subArticles.length) {
+      article += createArticleLI(menuItem, id);
     }
 
-    subArticle += subArticleMarkUp(newID, article);
+    subArticle += subArticleMarkUp(id, article);
 
-    menu += menuMarkUp(id, elem);
+    menu += menuMarkUp(id, menuItem);
   });
 
   // Returns the html snippet for the navbar
