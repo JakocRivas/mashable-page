@@ -43,16 +43,14 @@ export default class Menu {
       (this.menus.length < constants.maxNumberOfMenus &&
         name.length &&
         type === constants.subMenuTypeGeneral) ||
-      type === constants.noType
+      type === constants.noType ||
+      type === constants.subMenuTypeMore
     ) {
       this.menus.push(menu);
       return menu;
     }
 
-    if (name.length > 0 && type === constants.subMenuTypeMore) {
-      this.menus.push(menu);
-      return menu;
-    }
     this.more.push(menu);
+    return menu;
   }
 }
