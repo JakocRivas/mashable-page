@@ -23,28 +23,52 @@ async function createSubMenu(
   minNumberOfSubArticles = 0,
   maxNumberOfSubArticles = 5
 ) {
-  const subArticlesArray = [];
+  // const subArticlesArray = [];
 
-  for (let index = 0; index < numberOfSubMenus; index += 1) {
-    const searchResults = await query.getResults(arrayOfSubMenus[index]);
-    const subArticle = {
-      title: arrayOfSubMenus[index],
-      subArticles: searchResults
-        .slice(minNumberOfSubArticles, maxNumberOfSubArticles)
-        .map(elem => {
-          return {
-            title: elem.title,
-            url: elem.urlToImage,
-            source: elem.source,
-            author: elem.author,
-            link: elem.url
-          };
-        })
-    };
-    subArticlesArray.push(subArticle);
-    minNumberOfSubArticles += 5;
-    maxNumberOfSubArticles += 5;
-  }
+  const subArticlesArray = await Promise.all(
+    arrayOfSubMenus.map(async (value, index) => {
+      const searchResults = await query.getResults(value);
+
+      const subArticle = {
+        title: value,
+        subArticles: searchResults
+          .slice(minNumberOfSubArticles, maxNumberOfSubArticles)
+          .map(elem => {
+            return {
+              title: elem.title,
+              url: elem.urlToImage,
+              source: elem.source,
+              author: elem.author,
+              link: elem.url
+            };
+          })
+      };
+      minNumberOfSubArticles += 5;
+      maxNumberOfSubArticles += 5;
+      return subArticle;
+    })
+  );
+
+  // for (let index = 0; index < numberOfSubMenus; index += 1) {
+  //   const searchResults = await query.getResults(arrayOfSubMenus[index]);
+  //   const subArticle = {
+  //     title: arrayOfSubMenus[index],
+  //     subArticles: searchResults
+  //       .slice(minNumberOfSubArticles, maxNumberOfSubArticles)
+  //       .map(elem => {
+  //         return {
+  //           title: elem.title,
+  //           url: elem.urlToImage,
+  //           source: elem.source,
+  //           author: elem.author,
+  //           link: elem.url
+  //         };
+  //       })
+  //   };
+  //   subArticlesArray.push(subArticle);
+  //   minNumberOfSubArticles += 5;
+  //   maxNumberOfSubArticles += 5;
+  // }
   return subArticlesArray;
 }
 
