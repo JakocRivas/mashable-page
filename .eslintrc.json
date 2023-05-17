@@ -1,0 +1,47 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["prettier", "babel", "prettier"],
+  "rules": {
+    "strict": 0,
+
+    "no-unused-vars": "warn", // disallow unused variables
+    "func-names": "off", // require or disallow named `function` expressions
+    "object-shorthand": "off", // require or disallow method and property shorthand syntax for object literals
+    "no-param-reassign": "off", // disallow reassigning `function` parameters
+    "no-nested-ternary": "off", // disallow nested ternary expressions
+    "consistent-return": "off", // require `return` statements to either always or never specify values
+    "no-console": "off", // disallow the use of `console`
+    "no-alert": "off", // disallow the use of `alert`, `confirm`, and `prompt`
+    "no-await-in-loop": "off", // disallow `await` inside of loops
+    "object-curly-spacing": "warn",
+    "prettier/prettier": "error",
+    "babel/new-cap": 1, // Ignores capitalized decorators (@Decorator)
+    "babel/camelcase": 1, // doesn't complain about optional chaining (var foo = bar?.a_b;`)
+    "babel/no-invalid-this": 1, // doesn't fail when inside class properties (class A { a = this.b; })
+    "babel/object-curly-spacing": 0, // doesn't complain about export x from "mod"; or export * as x from "mod";
+    "babel/quotes": 1, // doesn't complain about JSX fragment shorthand syntax (<>foo</>;)
+    "babel/semi": 1, // doesn't fail when using for await (let something of {}). Includes class properties
+    "babel/no-unused-expressions": 1, // doesn't fail when using do expressions or optional chaining (a?.b()).
+    "babel/valid-typeof": 1 // doesn't complain when used with BigInt (typeof BigInt(9007199254740991) === 'bigint').
+  }
+}
