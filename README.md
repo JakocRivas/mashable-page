@@ -1,6 +1,6 @@
 # mashable-page
 
-This repository intends to replicate the navbar of https://mashable.com/ as a practice of the tools and technologies of the "put name of the course here"
+This repository intends to replicate the navbar of https://mashable.com/ as practice
 
 Steps to run
 
